@@ -3,6 +3,18 @@
     --primary-color: #ffffff;
 }
 
+/*class*/
+
+.right {
+    display: flex;
+    float: right;
+}
+
+.left {
+    display: flex;
+    float: left;
+}
+
 /*id*/
 
 #menu {
