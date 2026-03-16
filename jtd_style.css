@@ -3,6 +3,8 @@
     --primary-color: #ffffff;
 }
 
+/*id*/
+
 #menu {
     float: center;
 }
@@ -16,6 +18,14 @@
     height: 50px;
     background-color: var(--navbar-bg-color);
     color: var(--navbar-bg-color);
-    top: 0;
+    bottom: 0;
     overflow: hidden;
+    border-radius: 3px;
+}
+
+#PageButton {
+    background-color: var(--primary-color);
+    width: 100px;
+    height: 30px;
+    border-radius: 3%;
 }
