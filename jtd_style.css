@@ -8,11 +8,20 @@
 .right {
     display: flex;
     float: right;
+    
+}
+
+.center {
+    display: flex;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .left {
     display: flex;
     float: left;
+    left: 5%;
 }
 
 /*id*/
@@ -37,7 +46,8 @@
 
 #PageButton {
     background-color: var(--primary-color);
-    width: 100px;
-    height: 30px;
+    width: 80px;
+    height: 20px;
+    text-align: center;
     border-radius: 3%;
 }
