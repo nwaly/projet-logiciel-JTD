@@ -8,7 +8,6 @@
 .right {
     display: flex;
     float: right;
-    
 }
 
 .center {
@@ -18,10 +17,17 @@
     margin-right: auto;
 }
 
+.vertical_center {
+    vertical-align: middle;
+}
+
 .left {
     display: flex;
     float: left;
-    left: 5%;
+}
+
+.relative {
+    position: relative;
 }
 
 /*id*/
@@ -31,23 +37,17 @@
 }
 
 #bottombar {
-    position: sticky;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    width: 100%;
+    position: relative;
+    width: 80%;
     height: 50px;
     background-color: var(--navbar-bg-color);
     color: var(--navbar-bg-color);
-    bottom: 0;
-    overflow: hidden;
-    border-radius: 3px;
 }
 
 #PageButton {
+    display: flex;
     background-color: var(--primary-color);
     width: 80px;
     height: 20px;
     text-align: center;
-    border-radius: 3%;
 }
