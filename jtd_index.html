@@ -7,18 +7,33 @@
   <style></style>
 </head>
 <body>
-  <div id="bar" class="topbar">
-    
-    <a href="./settings.html" class="right middle">Réglages</a>
-  </div>
-  <div>
+  <table id="bar" class="topbar">
+    <th>
+      <h3 id="demo" class="left" style="color: white;"></h3>
+    </th>
+    <th></th>
+    <th>
+      <a href="./settings.html" class="right">Réglages</a>
+    </th>
+  </table>
+
+  <span id="mainPage">
     <h1>Main page</h1>
-  </div>
-  <div id="bar" class="bottombar middle">
-    <a href="./tracker.html" class="left middle">Tracker</a>
-    <a href="./journal.html" class="center middle">Journal</a>
-    <a href="./todo.html" class="right middle">To Do</a>
-  </div>
+  </span>
+
+  <table id="bar" class="bottombar middle">
+    <tr>
+      <th>
+        <a href="./tracker.html" class="left">Tracker</a>
+      </th>
+      <th>
+        <a href="./journal.html" class="center">Journal</a>
+      </th>
+      <th>
+        <a href="./todo.html" class="right">To Do</a>
+      </th>
+    </tr>
+  </table>
 
   <script src="jtd_script.js"></script>
 </body>
