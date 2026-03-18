@@ -1,53 +1,77 @@
 :root {
-    --navbar-bg-color: #5fb8bf;
+    --blue: #bffbff;
+    --pink: #ffbfe4;
+    --purple: #d1bfff;
+    --green: #bfffd8;
     --primary-color: #ffffff;
+}
+
+div a {
+    text-align: center;
+}
+
+h1 {
+    font-size: small;
+    vertical-align: middle;
 }
 
 /*class*/
 
-.right {
-    display: flex;
-    float: right;
+.left {
+    position: relative;
+    display: inline-block;
+    float: left;
 }
 
+
 .center {
-    display: flex;
-    display: block;
+    display: inline-block;
     margin-left: auto;
     margin-right: auto;
 }
 
-.vertical_center {
+.right {
+    position: relative;
+    display: block;
+    float: right;
+}
+
+.middle {
     vertical-align: middle;
 }
 
-.left {
-    display: flex;
-    float: left;
+.topbar {
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+    height: 50px;
+    background-color: var(--purple);
+    align-items: center;
 }
 
-.relative {
-    position: relative;
+.bottombar {
+    position: fixed;
+    bottom: 0;
+    overflow: hidden;
+    height: 50px;
+    background-color: var(--blue);
+    align-items: center;
 }
 
 /*id*/
 
-#menu {
-    float: center;
-}
-
-#bottombar {
+#bar {
     position: relative;
-    width: 80%;
-    height: 50px;
-    background-color: var(--navbar-bg-color);
-    color: var(--navbar-bg-color);
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-#PageButton {
-    display: flex;
+#bar a {
     background-color: var(--primary-color);
-    width: 80px;
-    height: 20px;
+    width: 100px;
     text-align: center;
+    border-radius: 3%;
+    padding: 10px;
+    text-decoration: none;
 }
