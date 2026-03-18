@@ -5,7 +5,6 @@ class Journal:
     def __init__(self, base):
         self.base = base
 
-
     def nouvelle_entree(self, titre, date, contenu, modification):
         """permet de cree une nouvelle entrée"""
         sql = """INSERT INTO Journal (Journal_date, Journal_contenu,
@@ -15,9 +14,8 @@ class Journal:
 
     def get_tout(self):
         """permet de retourner tout les elements du journal ordonner selon leur date"""
-        table_journal = "SELECT * FROM Journal ORDER BY Journal_Date"
+        table_journal = "SELECT * FROM Journal ORDER BY Journal_date"
         return self.base.query(table_journal)
-
 
     def modifier(self, contenu, modification, id):
         """permet de modifier le contenu d'un texte et change aussi la dernière 

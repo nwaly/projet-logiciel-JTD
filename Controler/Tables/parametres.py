@@ -1,9 +1,10 @@
 """Table Parametres"""
 
 class Parametres :
-    """classe Parametres : ID, affichage, couleur"""
+    """classe Parametres : Parametres_ID, Parametres_affichage, Parametres_couleur"""
     def __init__(self, base):
         self.base = base
+        # definir les parametres par defaults ?
 
     def modifier_affichage (self, affichage):
         """permet de modifier l'affichage par default"""

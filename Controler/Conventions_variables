@@ -3,9 +3,9 @@ Fichier qui regroupe toute les conventions de variables qui passe par le control
 Base : 
     Base.display : montre la connection de la base de donnée
 
-    Base.query (sql) : retourne toute les ligne de la requete sql
+    Base.query (requete_sql) : retourne toute les ligne de la requete sql
 
-    Base.commit (sql) : commit la requete sql
+    Base.commit (requete_sql) : commit la requete sql
 
 Journal :
     (Journal_ID, Journal_date,Journal_contenu, Journal_modification, Journal_titre)
@@ -25,7 +25,29 @@ Tache :
 
     Tache.modification_date (date) : permet de reporter la validation d'une tache
 
+    Tache.get_tout : permet de retourner tout les elements de tache ordonnés selon leur date de 
+    validation effective ou presumée
+
 SousTache :
     (Sous_Tache_ID, Sous_Tache_nom, Sous_Tache_statut, Tache_Tache_ID)
 
     SousTache.nouvelle_sous_tache (nom, statut, tache_id) : permet de crée une nouvelle sous tache dans la base de donnée 
+
+    Sous_Tache.get_tout : permet de retourner tout les elements de sous-tache ordonnés selon l'id de la tache à laquelle elle sont liées
+
+Tracker : 
+    (Tracker_ID, Tracker_nom, Tracker_description, 
+    Tracker_couleur, Tracker_icone)
+
+    Tracker.nouveau_tracker (nom, description, couleur, icone) : permet de crée un nouveau tracker dans la base de donnée
+
+    Tracker.get_tout : permet de retourner tout les elements du tracker ordonner selon leur id
+
+Parametres : 
+    (Parametres_ID, Parametres_affichage, Parametres_couleur")
+
+    Parametres.modifier_affichage (affichage) : permet de modifier l'affichage par default
+
+    Parametres.modifier_couleur (couleur) : permet de modifier la couleur par defaut
+
+    Parametres.get_tout : permet de retourner tout les elements de parametres

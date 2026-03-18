@@ -18,12 +18,12 @@ class Base :
         """montre la connection de la base"""
         print(self.connexion)
 
-    def query (self, sql):
+    def query (self, requete_sql):
         """retourne toute les lignes de sql"""
-        self.curseur.execute(sql)
+        self.curseur.execute(requete_sql)
         return self.curseur.fetchall()
 
-    def commit (self, sql):
+    def commit (self, requete_sql):
         """permet de commit la requête"""
-        self.curseur.execute(sql)
+        self.curseur.execute(requete_sql)
         self.connexion.commit()
