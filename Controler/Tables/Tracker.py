@@ -8,9 +8,9 @@ class Tracker ():
 
     def nouveau_tracker(self, nom, description, couleur, icone):
         """permet de cree un nouveau tracker"""
-        sql = """INSERT INTO Journal (Tracker_nom, Tracker_description,
+        sql = f"""INSERT INTO Journal (Tracker_nom, Tracker_description,
         Tracker_couleur, Tracker_icone)
-        VALUES ( "nom", "description", "couleur", "icone")"""
+        VALUES ( {nom}, {description}, {couleur}, {icone})"""
         self.base.execute(sql, (nom, description, couleur, icone))
 
     def get_tout(self):
