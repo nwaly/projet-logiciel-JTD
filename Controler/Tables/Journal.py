@@ -1,14 +1,14 @@
 """Controler Journal"""
 
 class Journal:
-    """classe Journal : ID, titre, date, heure, contenu, modification(date)"""
+    """classe Journal : ID, titre, date, contenu, modification(date)"""
     def __init__(self, base):
         self.base = base
 
 
     def nouvelle_entree(self, titre, date, contenu, modification):
         """permet de cree une nouvelle entrée"""
-        sql = """INSERT INTO Journal (Journal_date, Journal_heure, Journal_contenu,
+        sql = """INSERT INTO Journal (Journal_date, Journal_contenu,
         Journal_modification, Journal_titre)
         VALUES ( "titre", "date", "contenu", "modification")"""
         self.base.execute(sql, (titre, date, contenu, modification, ))

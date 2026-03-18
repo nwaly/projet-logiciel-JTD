@@ -1,5 +1,4 @@
-"""table tracker"""
-"""
+"""table tracker
 -- -----------------------------------------------------
 -- Table `mydb`.`Tracker`
 -- -----------------------------------------------------
@@ -45,6 +44,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Calendrier_has_Tracker` (
 ENGINE = InnoDB;"""
 
 class Tracker ():
-    """"""
-        def __init__(self, base):
+    """classe tracker"""
+    def __init__(self, base):
         self.base = base
+

@@ -1,2 +1,31 @@
 Fichier qui regroupe toute les conventions de variables qui passe par le controller
 
+Base : 
+    Base.display : montre la connection de la base de donnée
+
+    Base.query (sql) : retourne toute les ligne de la requete sql
+
+    Base.commit (sql) : commit la requete sql
+
+Journal :
+    (Journal_ID, Journal_date,Journal_contenu, Journal_modification, Journal_titre)
+
+    Journal.nouvelle_entree(titre, date, heure, contenu, modification(date)) : permet de crée une nouvelle entrée du journal dans la base de donnée 
+
+    Journal.get_tout : permet de retourner tout les elements du journal ordonner selon leur date et heure
+
+    Journal.modifier (contenu, modification, id(de l'entrée à modifier)) : permet de modifier le contenu d'une entrée et change aussi la dernière date de modification
+
+Tache : 
+    (Tache_ID, Tache_date, Tache_nom, Tache_statut, Tache_sous_tache)
+
+    Tache.nouvelle_tache (nom, date, statut, sous_tache) : permet de cree une nouvelle tache dans la base de donnée
+
+    Tache.modification_statut (statut) : permet de modifier le statut d'une tache (valider/de-valider)
+
+    Tache.modification_date (date) : permet de reporter la validation d'une tache
+
+SousTache :
+    (Sous_Tache_ID, Sous_Tache_nom, Sous_Tache_statut, Tache_Tache_ID)
+
+    SousTache.nouvelle_sous_tache (nom, statut, tache_id) : permet de crée une nouvelle sous tache dans la base de donnée 
