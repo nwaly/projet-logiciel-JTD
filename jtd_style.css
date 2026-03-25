@@ -28,11 +28,20 @@ html {
     --primary-color: #ffffff;
 }
 
-div a {
+table tr th a {
     text-align: center;
 }
 
+table tr th span {
+    text-align: center;
+}
+
+table tr th {
+    width: 30%;
+}
+
 h1 {
+    display: block;
     font-size: small;
     vertical-align: middle;
 }
@@ -47,8 +56,6 @@ textarea {
     background-color: var(--primary-color);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: light;
-    rows: "5";
-    cols: "60";
 }
 
 /*class*/
@@ -81,12 +88,12 @@ textarea {
 
 .bottombar {
     position: fixed;
+    vertical-align: bottom;
     bottom: 0;
     overflow: hidden;
     height: 50px;
     background-color: var(--blue);
     align-items: center;
-
 }
 
 /*id*/
