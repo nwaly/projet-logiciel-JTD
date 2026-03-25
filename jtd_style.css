@@ -1,7 +1,29 @@
+/*---pour adapter l'interface à l'écran de l'utilisateur.trice---*/
+/* Fluid typography that scales with viewport */
+html {
+  font-size: clamp(16px, 4vw, 22px);
+}
+
+/* Container queries for component-based responsive design */
+.card-container {
+  container-type: inline-size;
+}
+
+@container (min-width: 300px) {
+  .card {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+/*----------styles--------*/
+
 :root {
     --blue: #bffbff;
+    --darkblue: #0856ab;
     --pink: #ffbfe4;
     --purple: #d1bfff;
+    --darkpurple: #6338a9;
     --green: #bfffd8;
     --primary-color: #ffffff;
 }
@@ -20,7 +42,13 @@ body {
 }
 
 textarea {
-  resize: none;
+    display: block;
+    resize: none;
+    background-color: var(--primary-color);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: light;
+    rows: "5";
+    cols: "60";
 }
 
 /*class*/
@@ -64,6 +92,14 @@ textarea {
 /*id*/
 
 #MainPage {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: dodgerblue;
+  padding: 10px;
+  height: auto;
+}
+
+#MainTitle {
     display: block;
     width: 100%;
     height: 100%;
@@ -84,4 +120,17 @@ textarea {
     border-radius: 5%;
     padding: 10px;
     text-decoration: none;
+}
+
+#mybutton {
+    color: #6338a9;
+    background-color: #bfffd8;
+    font-size:80%;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-radius: 10%;
+    height: 50px;
+    width: 60px;
+    box-shadow: none;
+    cursor: pointer;
 }
