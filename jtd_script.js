@@ -9,5 +9,13 @@ document.getElementById("today").innerHTML = d.getDate().toString()+" "+name+" "
 function newEntry() {
     const para = document.createElement("textarea");
     document.getElementById("MainPage").appendChild(para);
-    
+}
+
+function valEntry() {
+    const newNode = document.createElement("li");
+    const textNode = document.getElementById("EntryInput");
+    console.log(textNode);
+    newNode.innerText = textNode.value;
+    const list = document.getElementById("EntryList");
+    list.insertBefore(newNode, list.children[0]);
 }

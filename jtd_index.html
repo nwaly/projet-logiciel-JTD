@@ -21,12 +21,28 @@
 
   <!--main area : change selon la page-->
   <div id="MainPage">
+
+    <!--button for new text area type entry-->
     <table>
       <th>
         <button onclick="newEntry()" id="mybutton">New Entry</button>
       </th>
     </table>
-    <textarea name="textArea" class="center" rows="5" cols="60">Journaling Prompt...</textarea>
+
+    <!--button to validate input into new entry-->
+    <button onclick="valEntry()" id="valbutton">Validate Entry</button>
+    
+    <!--Input area-->
+    <table>
+      <th>
+        <ul id="EntryList">
+          <input type="text" id="EntryInput" placeholder="Journal Entry Input...">
+        </ul>
+      </th>
+    </table>
+
+    <!--Old Entry type text area-->
+    <textarea name="textArea" class="center" rows="5" cols="60" placeholder="Journaling Prompt..."></textarea>
   </div>
   <!------------------------------------->
 
