@@ -2,27 +2,40 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Journal</title>
+  <title>Application Name</title>
   <link rel="stylesheet" href="jtd_style.css">
   <style></style>
 </head>
 <body>
-    <h1>Réglages</h1>
-  <div id="topbar">
-    <a href="./settings.html">Réglages</a>
-  </div>
+  <table id="bar" class="topbar">
+    <th>
+      <h3 id="demo" class="left" style="color: white;"></h3>
+    </th>
+    <th></th>
+    <th>
+      <a href="./settings.html" class="right">Réglages</a>
+    </th>
+  </table>
 
-  <div id="bottombar">
-    <div id="PageButton">
-      <a href="./tracker.html">Tracker</a>
-    </div>
-    <div id="PageButton">
-      <a href="./journal.html">Journal</a>
-    </div>
-    <div id="PageButton">
-      <a href="./todo.html">To Do</a>
-    </div>
-  </div>
+  <!--main area : change selon la page-->
+  <span id="mainPage">
+    <h1>Réglages</h1>
+  </span>
+  <!------------------------------------>
+
+  <table id="bar" class="bottombar middle">
+    <tr>
+      <th>
+        <a href="./tracker.html" class="left">Tracker</a>
+      </th>
+      <th>
+        <a href="./jtd_index.html" class="center">Journal</a>
+      </th>
+      <th>
+        <a href="./todo.html" class="right">To Do</a>
+      </th>
+    </tr>
+  </table>
 
   <script src="jtd_script.js"></script>
 </body>
