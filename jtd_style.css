@@ -40,6 +40,11 @@ table tr th {
     width: 30%;
 }
 
+span {
+    color: var(--primary-color);
+    font-size:xx-large;
+}
+
 h1 {
     display: block;
     font-size: small;
@@ -100,7 +105,7 @@ textarea {
 
 #MainPage {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto;
   background-color: dodgerblue;
   padding: 10px;
   height: auto;
@@ -130,6 +135,7 @@ textarea {
 }
 
 #mybutton {
+    float: right;
     color: #6338a9;
     background-color: #bfffd8;
     font-size:80%;

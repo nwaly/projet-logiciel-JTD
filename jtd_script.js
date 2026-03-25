@@ -8,5 +8,6 @@ document.getElementById("today").innerHTML = d.getDate().toString()+" "+name+" "
 // Bouton
 function newEntry() {
     const para = document.createElement("textarea");
-    document.body.appendChild(para);
+    document.getElementById("MainPage").appendChild(para);
+    
 }
