@@ -26,6 +26,10 @@ function valEntry() {
     //insère/ajoute newNode (=la nouvelle entrée) à la popsition [0] (=tout en haut) de la liste d'entrées 'list'
     list.insertBefore(newNode, list.children[0]);
 
-    // à faire mnt : 
+    // à faire mnt :
+    // il faut que l'inout se vide quand on transfère le contenu à la nouvelle entrée 
     // transformer le li en div/container joli avec le texte dedans
+    // trouver un moyen de fixe le problème de position?
+    // ou bien faire l'option de bouton New Entry > pop up pour la partie écriture de journal
+    // avec bouton 'valider' qui crée la nouvelle entrée
 }
