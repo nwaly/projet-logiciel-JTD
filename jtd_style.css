@@ -28,10 +28,6 @@ html {
     --primary-color: #ffffff;
 }
 
-table tr th a {
-    text-align: center;
-}
-
 table tr th span {
     text-align: center;
 }
@@ -119,13 +115,13 @@ textarea {
 }
 
 #bar {
-    position: relative;
     width: 100%;
     margin-left: auto;
     margin-right: auto;
 }
 
 #bar a {
+    text-align: center;
     background-color: var(--primary-color);
     width: 100px;
     text-align: center;
