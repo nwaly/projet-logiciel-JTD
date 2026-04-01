@@ -1,14 +1,14 @@
 """Controler Journal"""
 
-class Journal:
+class Journal :
     """classe Journal : ID, titre, date, contenu, modification"""
     def __init__(self, base, titre, date_, contenu, modification):
-        Journal.base = base
+        self.base = base
         """permet de cree une nouvelle entrée"""
         sql = f"""INSERT INTO Journal (Journal_titre, Journal_date, Journal_contenu,
         Journal_modification)
         VALUES ({titre},{date_},{contenu},{modification})"""
-        self.base.execute(sql, (titre, date_, contenu, modification))
+        self.base.commit(sql)
 
     def get_tout(self):
         """permet de retourner tout les elements du journal ordonner selon leur date"""
@@ -22,6 +22,6 @@ class Journal:
         WHERE Journal_ID = {id_}"""
         modification_modification = f"""UPDATE Journal Journal_modification = {modification}
         WHERE Journal_ID = {id_}"""
-        self.base.execute(modification_contenu, modification_modification)
+        self.base.query(modification_contenu, modification_modification)
 
         # json
