@@ -1,11 +1,9 @@
 """Controler Journal"""
-from datetime import (datetime, date)
-class Journal:
-    """classe Journal : ID, titre, date, contenu, modification(date)"""
-    def __init__(self, base):
-        self.base = base
 
-    def nouvelle_entree(self, titre, date_, contenu, modification):
+class Journal:
+    """classe Journal : ID, titre, date, contenu, modification"""
+    def __init__(self, base, titre, date_, contenu, modification):
+        Journal.base = base
         """permet de cree une nouvelle entrée"""
         sql = f"""INSERT INTO Journal (Journal_titre, Journal_date, Journal_contenu,
         Journal_modification)
@@ -21,13 +19,9 @@ class Journal:
         """permet de modifier le contenu d'un texte et change aussi la dernière 
         date de modification"""
         modification_contenu = f"""UPDATE Journal SET Journal_contenu = {contenu}
-        WHERE Journal_ID = {id_}""" # pas sûre
+        WHERE Journal_ID = {id_}"""
         modification_modification = f"""UPDATE Journal Journal_modification = {modification}
-        WHERE Journal_ID = {id_}""" # pas sûre
+        WHERE Journal_ID = {id_}"""
         self.base.execute(modification_contenu, modification_modification)
 
         # json
-
-
-
-Journal.nouvelle_entree("bonjour", datetime.now() ,"hello world", date.today())
