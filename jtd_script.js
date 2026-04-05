@@ -36,3 +36,8 @@ function valEntry() {
     // ou bien faire l'option de bouton New Entry > pop up pour la partie écriture de journal
     // avec bouton 'valider' qui crée la nouvelle entrée
 }
+
+// TO DO
+// new entry => formulaire?
+// chaque entrée => a un idée
+// check comment une base de données sql fonctionne
