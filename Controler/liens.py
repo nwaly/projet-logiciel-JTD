@@ -9,10 +9,11 @@ from base_de_donnee import Base
 # tests journal :
 
 mybase = Base()
-journal1 = Journal(mybase, "hello world", datetime.now(), "hello hello world world", date.today())
+journal1 = Journal(mybase, 'hello world', datetime.now(), 'hello hello world world', date.today())
 print (journal1.get_tout)
 
 journal1.get_tout()
+
 #journal1.modifier("HELLO WORLD", date.today, 1)
 
 # Tests Taches
