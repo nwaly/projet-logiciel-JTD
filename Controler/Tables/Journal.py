@@ -2,12 +2,12 @@
 
 class Journal :
     """classe Journal : ID, titre, date, contenu, modification"""
-    def __init__(self, base, titre, date_, contenu, modification):
+    def __init__(self, base, titre, date, contenu, modification):
         self.base = base
         """permet de cree une nouvelle entrée"""
         sql = f"""INSERT INTO Journal (Journal_titre, Journal_date, Journal_contenu,
         Journal_modification)
-        VALUES ({titre},{date_},{contenu},{modification})"""
+        VALUES ({titre},{date},{contenu},{modification})"""
         self.base.commit(sql)
 
     def get_tout(self):
@@ -22,6 +22,7 @@ class Journal :
         WHERE Journal_ID = {id_}"""
         modification_modification = f"""UPDATE Journal Journal_modification = {modification}
         WHERE Journal_ID = {id_}"""
-        self.base.query(modification_contenu, modification_modification)
-
-        # json
+        # self.base.query(modification_contenu, modification_modification)
+        self.base.commit(modification_contenu)
+        self.base.commit(modification_modification)
+        # est-ce que ca va fonctionner ? deux arguments dans un seul truc

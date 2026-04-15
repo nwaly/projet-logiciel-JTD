@@ -6,12 +6,17 @@ from Tables.Tache import (Tache, SousTache)
 from Tables.Tracker import Tracker
 from base_de_donnee import Base
 
-# testes journal :
+# tests journal :
 
 mybase = Base()
 journal1 = Journal(mybase, "hello world", datetime.now(), "hello hello world world", date.today())
 print (journal1.get_tout)
 
-
 journal1.get_tout()
 #journal1.modifier("HELLO WORLD", date.today, 1)
+
+# Tests Taches
+
+# Tests Tracker
+
+# Tests Parametres

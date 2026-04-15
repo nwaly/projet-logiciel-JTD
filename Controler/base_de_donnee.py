@@ -27,3 +27,4 @@ class Base :
         """permet de commit la requête"""
         self.curseur.execute(requete_sql)
         self.connexion.commit()
+        
