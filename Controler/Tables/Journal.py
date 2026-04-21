@@ -2,13 +2,13 @@
 
 class Journal :
     """classe Journal : ID, titre, date, contenu, modification"""
-    def __init__(self, base, titre, date, contenu, modification):
+    def __init__(self, base, titre, contenu):
         self.base = base
         """permet de cree une nouvelle entrée"""
-        sql = f"""INSERT INTO Journal (Journal_titre, Journal_date, Journal_contenu,
-        Journal_modification)
-        VALUES ({titre},{date},{contenu},{modification})"""
-        self.base.commit(sql)
+        sql = """INSERT INTO Journal (Journal_titre, Journal_contenu)
+        VALUES (%s, %s)"""
+        valeurs = (titre, contenu)
+        self.base.commit(sql, valeurs)
 
     def get_tout(self):
         """permet de retourner tout les elements du journal ordonner selon leur date"""
@@ -18,11 +18,8 @@ class Journal :
     def modifier(self, contenu, modification, id_):
         """permet de modifier le contenu d'un texte et change aussi la dernière 
         date de modification"""
-        modification_contenu = f"""UPDATE Journal SET Journal_contenu = {contenu}
-        WHERE Journal_ID = {id_}"""
-        modification_modification = f"""UPDATE Journal Journal_modification = {modification}
-        WHERE Journal_ID = {id_}"""
-        # self.base.query(modification_contenu, modification_modification)
-        self.base.commit(modification_contenu)
-        self.base.commit(modification_modification)
-        # est-ce que ca va fonctionner ? deux arguments dans un seul truc
+        modifier_contenu = """ UPDATE Journal SET Journal_contenu = %s,
+        journal_modification = %s WHERE Journal_ID = %s
+         """
+        valeurs = (contenu, modification, id_)
+        self.base.commit(modifier_contenu , valeurs)
