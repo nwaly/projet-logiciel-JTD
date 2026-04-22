@@ -23,3 +23,4 @@ class Journal :
          """
         valeurs = (contenu, modification, id_)
         self.base.commit(modifier_contenu , valeurs)
+        
