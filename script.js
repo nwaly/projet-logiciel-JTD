@@ -4,7 +4,7 @@ const month = ["January","February","March","April","May","June","July","August"
 let name = month[d.getMonth()];
 document.getElementById("today").innerHTML = d.getDate().toString()+" "+name+" "+d.getFullYear().toString();
 
-// Journal
+// Journal //
 // Bouton
 function newEntry() {
     const para = document.createElement("textarea");
