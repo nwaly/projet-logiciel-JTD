@@ -126,6 +126,11 @@ textarea {
 
 /*id*/
 
+#LoadPage {
+    z-index: -1;
+    display: flex;
+}
+
 #MainPage {
   display: grid;
   grid-template-columns: auto;
