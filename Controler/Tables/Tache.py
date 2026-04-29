@@ -1,4 +1,5 @@
 """Table Tache"""
+import json
 
 class Tache :
     """classe table (Tache_ID, Tache_date, Tache_nom, Tache_statut, Tache_sous_tache)"""
@@ -46,7 +47,9 @@ class Tache :
         """permet de retourner tout les elements de tache ordonnés selon leur date de 
         validation effective ou presumée"""
         table_tache = "SELECT * FROM Tache ORDER BY Tache_date"
-        return self.base.query(table_tache)
+        donnee= self.base.query(table_tache)
+        json_get_tout_tache = json.dumps(donnee)
+        return json_get_tout_tache
 
 class SousTache :
     """Classe Sous_Tache (Sous_Tache_ID, Sous_Tache_nom, Sous_Tache_statut, Tache_Tache_ID)"""
@@ -62,4 +65,6 @@ class SousTache :
         """permet de retourner tout les elements de sous-tache ordonnés selon l'id de la tache
         à laquelle elle sont liées"""
         table_sous_tache = "SELECT * FROM Sous_Tache ORDER BY Sous_Tache_ID"
-        return self.base.query(table_sous_tache)
+        donnee = self.base.query(table_sous_tache)
+        json_get_tout_sous_tache = json.dumps(donnee)
+        return json_get_tout_sous_tache

@@ -1,4 +1,6 @@
 """Controler Journal"""
+import json
+from pathlib import Path
 
 class Journal :
     """classe Journal : ID, titre, date, contenu, modification"""
@@ -12,8 +14,12 @@ class Journal :
 
     def get_tout(self):
         """permet de retourner tout les elements du journal ordonner selon leur date"""
+        get_tout_journal = Path("get_tout_journal.json")
         table_journal = "SELECT * FROM Journal ORDER BY Journal_date"
-        return self.base.query(table_journal)
+        donnee =self.base.query(table_journal)
+        with open(get_tout_journal, 'w', encoding='utf-8') as file:
+            json.dump(donnee, file)
+
 
     def modifier(self, contenu, modification, id_):
         """permet de modifier le contenu d'un texte et change aussi la dernière 
@@ -23,4 +29,3 @@ class Journal :
          """
         valeurs = (contenu, modification, id_)
         self.base.commit(modifier_contenu , valeurs)
-        

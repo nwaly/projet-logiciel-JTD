@@ -1,12 +1,12 @@
 """Table Tracker"""
-
+import json
 class Tracker ():
     """classe tracker (Tracker_ID, Tracker_nom, Tracker_description, 
     Tracker_couleur, Tracker_icone)"""
     def __init__(self, base, nom, description, couleur, icone):
         """permet de cree un nouveau tracker"""
         self.base = base
-        sql = """INSERT INTO Journal (Tracker_ID, Tracker_nom, Tracker_description,
+        sql = """INSERT INTO Tracker (Tracker_ID, Tracker_nom, Tracker_description,
         Tracker_couleur, Tracker_icone)
         VALUES (SELECT COALESCE(MAX(Tracker_ID),0)+1, %s, %s, %s, %s)"""
         valeurs = (nom, description, couleur, icone)
@@ -15,7 +15,9 @@ class Tracker ():
     def get_tout(self):
         """permet de retourner tout les elements du Tracker ordonner selon leur id"""
         table_tracker = "SELECT * FROM Tracker ORDER BY Tracker_ID"
-        return self.base.query(table_tracker)
+        donnee = self.base.query(table_tracker)
+        json_get_tout_tracker = json.dumps(donnee)
+        return json_get_tout_tracker
 
 class CalendrierHasTracker ():
     """classe Calendrier_has_tracker ()"""

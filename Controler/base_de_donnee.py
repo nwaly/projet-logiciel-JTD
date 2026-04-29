@@ -33,5 +33,3 @@ class Base:
         else:
             self.curseur.execute(requete_sql)
         self.connexion.commit()
-
-
