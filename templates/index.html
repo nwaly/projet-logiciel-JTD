@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Application Name</title>
+  <link 
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='style.css') }}"/>
+</head>
+<body>
+  <header id="header" class="bar">
+    <h3 id="today" style="color: white;"></h3>
+    <!--Remplacer le h1 avec un élément qui reprend le titre de la page sélectionnée-->
+    <h1>Journal</h1>
+    <a href="/settings">Réglages</a>
+  </header>
+
+  {% block content %}{% endblock %}
+
+  <footer id="footer" class="bar">
+  </footer>
+  <!--footer > boite de nav > 3 liens-->
+  <script src="script.js"></script>
+</body>
+</html>
