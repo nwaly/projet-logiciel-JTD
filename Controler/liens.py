@@ -23,8 +23,6 @@ print (journal1.get_tout())
 
 # Tests Tracker
 
-
-
 tracker1 = Tracker(mybase, "eau", "boire 1 litre d'eau chaque jour", "rouge", "rond")
 print(tracker1.get_tout())
 

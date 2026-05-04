@@ -1,8 +1,5 @@
 """Table Parametres"""
 
-import json
-
-
 class Parametres :
     """classe Parametres : Parametres_ID, Parametres_affichage, Parametres_couleur"""
     def __init__(self, base):
@@ -27,6 +24,4 @@ class Parametres :
     def get_tout(self):
         """permet de retourner tout les elements de parametres"""
         table_parametres = "SELECT * FROM Parametres WHERE Parametres_ID = 1"
-        donnee = self.base.query(table_parametres)
-        json_get_tout_parametres = json.dumps(donnee)
-        return json_get_tout_parametres
+        return self.base.query(table_parametres)

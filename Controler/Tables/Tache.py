@@ -1,11 +1,12 @@
 """Table Tache"""
-import json
 
 class Tache :
     """classe table (Tache_ID, Tache_date, Tache_nom, Tache_statut, Tache_sous_tache)"""
-    def __init__(self, base, nom, date, statut, sous_tache):
-        """permet de cree une nouvelle tache"""
+    def __init__(self, base):
+
         self.base = base
+    def nouveau(self, nom, date, statut, sous_tache):
+        """permet de cree une nouvelle tache"""
         tache = """INSERT INTO Tache (Tache_nom, Tache_date, Tache_statut, Tache_sous_tache)
         VALUES (%s, %s, %s, %s)"""
         valeurs = (nom, date, statut, sous_tache)
@@ -47,14 +48,13 @@ class Tache :
         """permet de retourner tout les elements de tache ordonnés selon leur date de 
         validation effective ou presumée"""
         table_tache = "SELECT * FROM Tache ORDER BY Tache_date"
-        donnee= self.base.query(table_tache)
-        json_get_tout_tache = json.dumps(donnee)
-        return json_get_tout_tache
+        return self.base.query(table_tache)
 
 class SousTache :
     """Classe Sous_Tache (Sous_Tache_ID, Sous_Tache_nom, Sous_Tache_statut, Tache_Tache_ID)"""
-    def __init__(self, base, nom, statut, tache_id):
+    def __init__(self, base):
         self.base = base
+    def nouveau(self, nom, statut, tache_id):
         """permet de cree une nouvelle sous-tache"""
         sous_tache = """INSERT INTO Sous_Tache (Sous_Tache_nom, Sous_Tache_statut, Tache_Tache_ID)
         VALUES (%s, %s, %s)"""
@@ -65,6 +65,4 @@ class SousTache :
         """permet de retourner tout les elements de sous-tache ordonnés selon l'id de la tache
         à laquelle elle sont liées"""
         table_sous_tache = "SELECT * FROM Sous_Tache ORDER BY Sous_Tache_ID"
-        donnee = self.base.query(table_sous_tache)
-        json_get_tout_sous_tache = json.dumps(donnee)
-        return json_get_tout_sous_tache
+        return self.base.query(table_sous_tache)
