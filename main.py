@@ -11,6 +11,10 @@ def hello_world():
 def render_settings():
     return render_template("settings.html")
 
+@app.route("/journal")
+def render_journal():
+    return render_template("journal.html")
+
 def main():
     app.run(debug=True)
 
