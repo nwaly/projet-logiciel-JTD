@@ -1,0 +1,166 @@
+/*---pour adapter l'interface à l'écran de l'utilisateur.trice---*/
+/* Fluid typography that scales with viewport */
+html {
+  font-size: clamp(16px, 4vw, 22px);
+}
+
+/* Container queries for component-based responsive design */
+.card-container {
+  container-type: inline-size;
+}
+
+@container (min-width: 300px) {
+  .card {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+/*----------styles--------*/
+
+:root {
+    --blue: #bffbff;
+    --darkblue: #0856ab;
+    --pink: #ffbfe4;
+    --purple: #d1bfff;
+    --darkpurple: #6338a9;
+    --green: #bfffd8;
+    --primary-color: #ffffff;
+}
+
+header {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    overflow: hidden;
+    background-color: var(--purple);
+    /*aligns elements in the center*/
+    align-items: center;
+    justify-content: center;
+    /*keeps bar at the top*/
+    position: sticky;
+    top: 0;
+}
+
+header a {
+    margin: 15px;
+    padding: 10px;
+    width: 100px;
+    text-align: center; /*aligne le texte au milieu de leur padding*/
+    border-radius: 5%;
+    background-color: var(--primary-color);
+    text-decoration: none;
+}
+
+header h3 {
+    margin: 15px;
+    padding: 10px;
+    text-align: center; /*aligne le texte au milieu de leur padding*/
+    border-radius: 5%;
+    text-decoration: none;
+}
+
+header h1 {
+    margin: 15px;
+    padding: 10px;
+    text-align: center; /*aligne le texte au milieu de leur padding*/
+    border-radius: 5%;
+    text-decoration: none;
+    color: #6338a9;
+    font-size: xx-large;
+}
+
+footer {
+    display: flex;
+    overflow: hidden;
+    background-color: var(--blue);
+    /*aligns elements in the center*/
+    align-items: center;
+    justify-content: center;
+    /*keeps bar at the bottom*/
+    position: fixed; 
+    bottom: 0;
+}
+
+footer a {
+    margin: 15px;
+    padding: 10px;
+    width: 100px;
+    text-align: center; /*aligne le texte au milieu de leur padding*/
+    border-radius: 5%;
+    background-color: var(--primary-color);
+    text-decoration: none;
+}
+
+table tr th span {
+    text-align: center;
+}
+
+table tr th {
+    width: 30%;
+}
+
+span {
+    color: var(--primary-color);
+}
+
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+textarea {
+    background-color: rgba(255, 255, 255, 0.8);
+    display: block;
+    resize: none;
+    background-color: var(--primary-color);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: light;
+}
+
+/*class*/
+
+.bar {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*id*/
+
+#LoadPage {
+    z-index: -1;
+    display: flex;
+}
+
+#MainPage {
+  display: grid;
+  grid-template-columns: auto;
+  background-color: dodgerblue;
+  padding: 10px;
+  height: auto;
+}
+
+#MainTitle {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #bfffd8;
+}
+
+#mybutton {
+    float: right;
+    color: #6338a9;
+    background-color: #bfffd8;
+    font-size:80%;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-radius: 10%;
+    height: 50px;
+    width: 60px;
+    box-shadow: none;
+    cursor: pointer;
+}
+
+#DiaryEntry {
+    background-color: white;
+    padding: 15px;
+}
