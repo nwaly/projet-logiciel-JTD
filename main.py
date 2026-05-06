@@ -15,6 +15,14 @@ def render_settings():
 def render_journal():
     return render_template("journal.html")
 
+@app.route("/todo")
+def render_todo():
+    return render_template("todo.html")
+
+@app.route("/tracker")
+def render_tracker():
+    return render_template("tracker.html")
+
 def main():
     app.run(debug=True)
 
