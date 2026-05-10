@@ -100,7 +100,7 @@ table tr th {
 }
 
 span {
-    color: var(--primary-color);
+    color: var(--darkpurple);
 }
 
 body {
@@ -125,6 +125,10 @@ textarea {
 }
 
 /*id*/
+
+#today {
+    z-index: +1;
+}
 
 #LoadPage {
     z-index: -1;

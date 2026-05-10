@@ -10,7 +10,7 @@
 </head>
 <body>
   <header id="header" class="bar">
-    <h3 id="today" style="color: white;"></h3>
+    <h1 id="today"></h1>
     <!--Remplacer le h1 avec un élément qui reprend le titre de la page sélectionnée-->
     <h1>Journal</h1>
     <a href="/settings">Réglages</a>
@@ -23,6 +23,9 @@
     <a href="/journal">Journal</a>
     <a href="/todo">To Do</a>
   </footer>
-  <script src="script.js"></script>
+  <script
+  rel="script"
+  type="text/javascript"
+  src="{{ url_for('static', filename='map.js') }}"></script>
 </body>
 </html>

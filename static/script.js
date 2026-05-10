@@ -1,3 +1,7 @@
+// check folder ISH pour page troubleshooting//
+//------------------//
+
+
 // pour afficher la date actuel en haut à gauche
 const d = new Date();
 const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
