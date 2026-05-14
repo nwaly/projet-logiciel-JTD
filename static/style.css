@@ -126,6 +126,10 @@ textarea {
 
 /*id*/
 
+#pageTitle {
+    color: #6338a9;
+}
+
 #today {
     z-index: +1;
 }

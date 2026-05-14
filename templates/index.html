@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Application Name</title>
+  <title>App Name</title>
   <link 
   rel="stylesheet"
   type="text/css"
@@ -10,9 +10,17 @@
 </head>
 <body>
   <header id="header" class="bar">
-    <h1 id="today"></h1>
+    <div id="today">date ajd</div>
+    <h1 id="pageTitle">page titre</h1>
+    
     <!--Remplacer le h1 avec un élément qui reprend le titre de la page sélectionnée-->
-    <h1>Journal</h1>
+    {% if title %}
+      <title>Home - {{title}}</title>
+    {%else%}
+      <title>Home</title>
+    {%endif%}
+    <!--Remplacer le h1 avec un élément qui reprend le titre de la page sélectionnée-->
+
     <a href="/settings">Réglages</a>
   </header>
 
@@ -23,9 +31,9 @@
     <a href="/journal">Journal</a>
     <a href="/todo">To Do</a>
   </footer>
-  <script
+  <link
   rel="script"
   type="text/javascript"
-  src="{{ url_for('static', filename='map.js') }}"></script>
+  src="{{ url_for('static', filename='script.js') }}"/>
 </body>
 </html>

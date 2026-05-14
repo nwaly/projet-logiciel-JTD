@@ -1,15 +1,21 @@
 // check folder ISH pour page troubleshooting//
 //------------------//
+// pour changer le titre selon la page sélectionnée
+  const element = document.querySelector("a");
+  element.addEventListener("click", changeTitle);
 
+  function changeTitle() {
+    document.getElementById("pageTitle").innerHTML = "Hello World";
+  }
 
-// pour afficher la date actuel en haut à gauche
+// pour afficher la date actuelle
 const d = new Date();
 const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-let name = month[d.getMonth()];
-document.getElementById("today").innerHTML = d.getDate().toString()+" "+name+" "+d.getFullYear().toString();
+let month_name = month[d.getMonth()];
+document.getElementById("today").innerHTML = d.getDate().toString()+" "+month_name+" "+d.getFullYear().toString();
 
 // Journal //
-// Bouton
+// Boutons
 function newEntry() {
     const para = document.createElement("textarea");
     document.getElementById("MainPage").appendChild(para);
