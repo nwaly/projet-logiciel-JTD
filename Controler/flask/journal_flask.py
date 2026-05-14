@@ -17,7 +17,7 @@ def ajoute_journal():
 
 @journal_flask.route("/journal", methods=["GET"])
 def get_journal():
-    """va cherhcer toutes les données de journal dans la base et l'es envoie en json"""
+    """va chercher toutes les données de journal dans la base et les envoie en json"""
     data_journal = journal.get_tout()
     return jsonify(data_journal)
 
