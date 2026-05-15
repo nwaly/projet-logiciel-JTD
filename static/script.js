@@ -1,12 +1,7 @@
-// check folder ISH pour page troubleshooting//
+// pour check si le lien marche//
+console.log("JavaScript file linked successfully!");  
+alert("Hello from Flask + JavaScript!");  
 //------------------//
-// pour changer le titre selon la page sélectionnée
-  const element = document.querySelector("a");
-  element.addEventListener("click", changeTitle);
-
-  function changeTitle() {
-    document.getElementById("pageTitle").innerHTML = "Hello World";
-  }
 
 // pour afficher la date actuelle
 const d = new Date();

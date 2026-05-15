@@ -2,7 +2,11 @@
 <html>
 <head>
   <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>App Name</title>
+  {% if title %}
+      <title>{{title}}</title>
+    {%else%}
+      <title>Appli name</title>
+  {%endif%}
   <link 
   rel="stylesheet"
   type="text/css"
@@ -10,18 +14,14 @@
 </head>
 <body>
   <header id="header" class="bar">
-    <div id="today">date ajd</div>
-    <h1 id="pageTitle">page titre</h1>
-    
-    <!--Remplacer le h1 avec un élément qui reprend le titre de la page sélectionnée-->
+    <h1 id="today" style="color: white;">date ajd</h1>
+    <!--Reprend le titre de la page sélectionnée-->
     {% if title %}
-      <title>Home - {{title}}</title>
-    {%else%}
-      <title>Home</title>
+      <h1 id="pageTitle">{{title}}</h1>
+      {%else%}
+        <h1 id="pageTitle">Home</h1>
     {%endif%}
-    <!--Remplacer le h1 avec un élément qui reprend le titre de la page sélectionnée-->
-
-    <a href="/settings">Réglages</a>
+    <a href="/settings">Settings</a>
   </header>
 
   {% block content %}{% endblock %}
@@ -31,9 +31,6 @@
     <a href="/journal">Journal</a>
     <a href="/todo">To Do</a>
   </footer>
-  <link
-  rel="script"
-  type="text/javascript"
-  src="{{ url_for('static', filename='script.js') }}"/>
+  <script src="{{url_for('static', filename='script.js')}}"></script>
 </body>
 </html>
