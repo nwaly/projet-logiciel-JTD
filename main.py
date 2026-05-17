@@ -32,13 +32,14 @@ def render_tracker():
     return render_template("tracker.html", title = "Tracker")
 
 # test de setup pour le système de forms php
-@app.route("/submit_form", methods=['POST'])
+@app.route("/submit_form", methods=['PUT', 'POST'])
 def submit_form():
-    data = request.form
-    return {
-        'titre'     : data['titre'],
-        'entrée' : data['contenu'],
-    }
+#    return {
+#        'titre'     : data['titre'],
+#        'entrée' : data['contenu'],
+#    }
+    return jsonify(request.get_json(force=True))
+
 
 def main():
     app.run(debug=True)

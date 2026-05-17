@@ -1,16 +1,29 @@
 {% extends "index.html" %} {% block content %}
 <body>
     <div class="container">
-        <div></div> <!--pour activer le grid et centrer le form-->
         <form action="{{ url_for('submit_form')}}" method="post">
-            <label for="titre">Entry Title:</label><br>
-            <input type="text" id="titre" name="titre" placeholder="Title..."><br><br>
+            </form>
+            <label for="titre">Titre:</label><br>
+            <input
+                type="text"
+                id="titre"
+                name="titre"
+                placeholder="Titre..."
+                style="text-align: center;"><br><br>
             
-            <label for="contenu">Entry Content:</label><br>
-            <textarea form_id="contenu" name="contenu" rows="4" col="100" placeholder="Journal entry..."></textarea><br>
+            <label for="contenu">Contenu:</label><br>
+            <textarea
+                id="contenu"
+                name="contenu"
+                rows="4"
+                col="100"
+                placeholder="Cher journal..."></textarea><br>
 
-            <input type="submit" value="Submit">
-        </form>
+            <input onclick="sendData()" type="submit" value="Nouvelle Entrée (marche pas encore)" style="color: var(--darkpurple); font-weight: bolder;"><br>
+            
+            <!--prend le contenu et en fait un nouvel élément de liste qui s'ajoute dans la zone en dessous-->
+            <button onclick="ajouterEntree()" style="color: var(--darkpurple); font-weight: bolder;">Bouton Nouvelle Entrée</button>
     </div>
+    <div id="output" class="journal-container" style="background-color: white;"></div>
 </body>
 {% endblock %}
