@@ -1,17 +1,16 @@
 {% extends "index.html" %} {% block content %}
 <body>
     <div class="container">
-        <div></div>
-        <form action="/action_page.php">
-            <label for="eTitle">Entry Title:</label><br>
-            <input type="text" id="eTitle" name="eTitle" placeholder="Title..."><br>
+        <div></div> <!--pour activer le grid et centrer le form-->
+        <form action="{{ url_for('submit_form')}}" method="post">
+            <label for="titre">Entry Title:</label><br>
+            <input type="text" id="titre" name="titre" placeholder="Title..."><br><br>
             
-            <label for="eContent">Entry Content:</label><br>
-            <textarea form_id="eContent" name="eContent" rows="4" col="100" placeholder="Journal entry..."></textarea><br>
+            <label for="contenu">Entry Content:</label><br>
+            <textarea form_id="contenu" name="contenu" rows="4" col="100" placeholder="Journal entry..."></textarea><br>
 
             <input type="submit" value="Submit">
         </form>
-        <div></div>
     </div>
 </body>
 {% endblock %}

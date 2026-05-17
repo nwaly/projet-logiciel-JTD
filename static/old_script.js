@@ -4,8 +4,10 @@
 // Journal //
 // Boutons
 function newEntry() {
-    const para = document.createElement("textarea");
-    document.getElementById("MainPage").appendChild(para);
+  // crée nouvel élément sous 'para'
+  const para = document.createElement("textarea");
+  // ajoute le nouvel élément (para) à l'élément de page dont l'id est #MainPage
+  document.getElementById("MainPage").appendChild(para);
 }
 
 function valEntry() {
