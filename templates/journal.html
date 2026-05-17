@@ -1,36 +1,17 @@
 {% extends "index.html" %} {% block content %}
 <body>
-  <div id="MainPage">
-    <!--test de div container pour les diary entry-->
-    <table id="DiaryEntry">
-      <tr>
-        <th class="left">
-          test
-        </th>
-      </tr>
-    </table>
+    <div class="container">
+        <div></div>
+        <form action="/action_page.php">
+            <label for="eTitle">Entry Title:</label><br>
+            <input type="text" id="eTitle" name="eTitle" placeholder="Title..."><br>
+            
+            <label for="eContent">Entry Content:</label><br>
+            <textarea form_id="eContent" name="eContent" rows="4" col="100" placeholder="Journal entry..."></textarea><br>
 
-    <!--button to validate input into new entry-->
-    <button onclick="valEntry()" id="valbutton">Validate Entry</button>
-
-    <!--Input area-->
-    <table>
-      <th>
-        <ul id="EntryList">
-          <input type="text" id="EntryInput" placeholder="Journal Entry Input...">
-        </ul>
-      </th>
-    </table>
-
-    <!--old Entry type text area-->
-    <textarea name="textArea" class="center" rows="5" cols="60" placeholder="Journaling Prompt..."></textarea>
-    
-    <!--button for new text area type entry-->
-    <table>
-      <th>
-        <button onclick="newEntry()" id="mybutton">New Entry</button>
-      </th>
-    </table>
-  </div>
+            <input type="submit" value="Submit">
+        </form>
+        <div></div>
+    </div>
 </body>
 {% endblock %}

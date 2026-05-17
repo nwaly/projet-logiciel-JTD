@@ -14,7 +14,7 @@
 </head>
 <body>
   <header id="header" class="bar">
-    <h1 id="today" style="color: white;">date ajd</h1>
+    <h1 id="today">date</h1>
     <!--Reprend le titre de la page sélectionnée-->
     {% if title %}
       <h1 id="pageTitle">{{title}}</h1>
@@ -31,6 +31,6 @@
     <a href="/journal">Journal</a>
     <a href="/todo">To Do</a>
   </footer>
-  <script src="{{url_for('static', filename='script.js')}}"></script>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>

@@ -1,5 +1,11 @@
 {% extends "index.html" %} {% block content %}
 <body>
-  <span>To Do</span>
+  <div class="container">
+    <form action="/action_page.php">
+      <label for="todo" style="color: white">To Do:</label><br>
+      <input id="todo" type="checkbox" placeholder="what to do next..."></input>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
 </body>
 {% endblock %}
