@@ -1,4 +1,5 @@
 """Table Tracker"""
+
 class Tracker ():
     """classe tracker (Tracker_ID, Tracker_nom, Tracker_description, 
     Tracker_couleur, Tracker_icone)"""
@@ -16,8 +17,3 @@ class Tracker ():
         """permet de retourner tout les elements du Tracker ordonner selon leur id"""
         table_tracker = "SELECT * FROM Tracker ORDER BY Tracker_ID"
         return self.base.query(table_tracker)
-
-class CalendrierHasTracker ():
-    """classe Calendrier_has_tracker ()"""
-
-    # comment relier ça avec calendrier ?

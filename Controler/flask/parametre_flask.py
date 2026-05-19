@@ -11,7 +11,7 @@ parametre = Parametres(base)
 def get_parametre():
     """va cherhcer toutes les données de parametre dans la base et les envoie en json"""
     data_parametre = parametre.get_tout()
-    return jsonify(data_parametre)
+    return jsonify(data_parametre), 200
 
 @parametre_flask.route('/parametre', methods=['PUT'])
 def update_affichage_parametre():
@@ -19,6 +19,7 @@ def update_affichage_parametre():
     body = request.json
     affichage = body.get("affichage")
     parametre.modifier_affichage(affichage)
+    return jsonify({"message": "statut de parametre modifié"}), 201
 
 @parametre_flask.route('/parametre', methods=['PUT'])
 def update_couleur_parametre():
@@ -26,3 +27,4 @@ def update_couleur_parametre():
     body = request.json
     couleur = body.get("couleur")
     parametre.modifier_couleur(couleur)
+    return jsonify({"message": "couleur de parametres modifié"}), 201
