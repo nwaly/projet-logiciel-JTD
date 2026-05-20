@@ -14,12 +14,13 @@ def ajoute_journal():
     titre = body.get("titre")
     contenu = body.get("contenu")
     journal.nouveau(titre, contenu)
+    return jsonify({"message": "Journal crée"}), 201
 
 @journal_flask.route("/journal", methods=["GET"])
 def get_journal():
     """va chercher toutes les données de journal dans la base et les envoie en json"""
     data_journal = journal.get_tout()
-    return jsonify(data_journal)
+    return jsonify(data_journal), 200
 
 @journal_flask.route('/journal/<int:id_>', methods=['PUT']) # front end=doit donner l'id qu'il veut
 def update_journal(id_):
@@ -28,3 +29,4 @@ def update_journal(id_):
     contenu = body.get("contenu")
     modification = body.get("modification")  # format "YYYY-MM-DD"
     journal.modifier(contenu, modification, id_)
+    return jsonify({"message": "Journal modifié"}), 201

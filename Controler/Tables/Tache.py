@@ -12,9 +12,10 @@ class Tache :
         valeurs = (nom, date, statut, sous_tache)
         self.base.commit(tache, valeurs)
 
+
     def modification_statut(self, nom ,date, statut):
         """permet de valider une tache"""
-        def get_statut_id(nom, date):
+        def get_statut_id(date, nom):
             """retourne l'id de la tache à chercher"""
             get_id = """SELECT Tache_ID FROM Tache WHERE Tache_date= %s AND Tache_nom = %s"""
             valeurs = (date, nom)
@@ -22,7 +23,7 @@ class Tache :
             if id_resultat and len(id_resultat)>0:
                 return id_resultat[0]
             return None
-        id_statut = get_statut_id(nom, date)
+        id_statut = get_statut_id(date, nom)
         tache_validation = """UPDATE Tache SET Tache_statut = %s
         WHERE Tache_ID = %s"""
         valeurs = (statut, id_statut)
