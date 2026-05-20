@@ -1,5 +1,7 @@
 from flask import Flask, render_template, url_for, request, jsonify
-"""from flask_mysqldb import MySQL"""
+from Controler.flask import journal_flask, parametre_flask, tache_flask, tracker_flask
+from Controler.Tables import Journal, parametres, Tache, Tracker
+from Controler import base_de_donnee, liens
 
 app = Flask(__name__)
 
@@ -9,7 +11,8 @@ app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = 'password'
 app.config['MYSQL_DB'] = 'flask'
 
-"""mysql = MySQL(app)"""
+mysql = MySQL(app)
+
 
 @app.route("/")
 def hello_world():
@@ -39,7 +42,6 @@ def submit_form():
 #        'entrée' : data['contenu'],
 #    }
     return jsonify(request.get_json(force=True))
-
 
 def main():
     app.run(debug=True)

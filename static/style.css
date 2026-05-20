@@ -140,6 +140,7 @@ textarea {
     grid-template-columns: auto;
     gap: 5px;
     overflow: hidden;
+    padding: 25px;
     /*aligns elements in the center*/
         align-items: center;
         justify-content: center;
