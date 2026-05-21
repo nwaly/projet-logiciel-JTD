@@ -9,3 +9,5 @@ Répertoire pour le développement de l'application de Journal-Tracker-toDo dans
 
 # Utilisation
 
+=> readme = document prise en mais => comment on fait pour lancer quelque chose 
+=> rapport = description de a à z => ganut charte => descriptions des differents elements / des technologies utilisées + screen shot du projet comment il fonctionne
