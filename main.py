@@ -2,15 +2,13 @@ from flask import Flask, render_template, url_for, request, jsonify
 from Controler.flask import journal_flask, parametre_flask, tache_flask, tracker_flask
 from Controler.Tables import Journal, parametres, Tache, Tracker
 from Controler import base_de_donnee, liens
-import pymysql
-import mysql
 
 app = Flask(__name__)
 
 """pour lier flask à la base de données SQL"""
 app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'nwaly'
-app.config['MYSQL_PASSWORD'] = 'wika20'
+app.config['MYSQL_USER'] = ''
+app.config['MYSQL_PASSWORD'] = ''
 app.config['MYSQL_DB'] = 'flask'
 
 @app.route("/")
