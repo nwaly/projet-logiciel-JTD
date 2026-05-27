@@ -20,6 +20,6 @@ class Journal :
         """permet de modifier le contenu d'un texte et change aussi la dernière 
         date de modification"""
         modifier_contenu = """ UPDATE Journal SET Journal_contenu = %s,
-        journal_modification = %s WHERE Journal_ID = %s"""
+        Journal_modification = %s WHERE Journal_ID = %s"""
         valeurs = (contenu, modification, id_)
         self.base.commit(modifier_contenu , valeurs)
