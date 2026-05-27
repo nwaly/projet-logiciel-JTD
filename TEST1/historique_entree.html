@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=S, initial-scale=1.0">
+    <title>historique journal</title>
+</head>
+<body>
+ <a href="parametres.html">
+        <button>PARAMETRES</button>
+    </a>
+     <a href="taches.html">
+        <button>TACHES</button>
+    </a>
+     <a href="tracker.html">
+        <button>TRACKER</button>
+    </a>
+    <a href="journal.html">
+        <button>JOURNAL</button>
+    <br>
+    <p>HISTORIQUE JOURNAL</p>
+    <br>
+    </a>
+    <form method="get" action="/Controler/flask/jounal_flask">
+    
+    </form>
+    <script>
+    function chargerJournal() {
+        const response = fetch("/journal", {method: "GET"});
+        const data = response;
+    console.log(data);
+    return data;}
+    
+    for (const entree of chargerJournal()) {
+        const p = document.createElement("p");
+        p.textContent = `Titre: ${entree.titre}, Contenu: ${entree.contenu}`;
+        document.body.appendChild(p);
+    }
+
+
+    </script>
+
+</body>
+</html>

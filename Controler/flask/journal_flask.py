@@ -3,6 +3,7 @@ from flask import Blueprint, request, jsonify
 from Controler.Tables.Journal import Journal
 from Controler.base_de_donnee import Base
 
+
 journal_flask = Blueprint("journal", __name__)
 base = Base()
 journal = Journal(base)
@@ -14,8 +15,12 @@ def ajoute_journal():
     body = request.json
     titre = body.get("titre")
     contenu = body.get("contenu")
+    if not titre:
+        return jsonify({"message": "Le titre est requis"}), 400
+    if not contenu:
+        return jsonify({"message": "Le contenu est requis"}), 400
     journal.nouveau(titre, contenu)
-    return jsonify({"message": "Journal crée"}), 201
+    return jsonify({"message": "Journal créé"}), 201
 
 # route à utiliser pour récuperer toutes les entrées de journal (retourne un dictionnaire json)
 @journal_flask.route("/journal", methods=["GET"])
