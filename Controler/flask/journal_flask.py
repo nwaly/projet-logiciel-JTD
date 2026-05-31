@@ -15,10 +15,6 @@ def ajoute_journal():
     body = request.json
     titre = body.get("titre")
     contenu = body.get("contenu")
-    if not titre:
-        return jsonify({"message": "Le titre est requis"}), 400
-    if not contenu:
-        return jsonify({"message": "Le contenu est requis"}), 400
     journal.nouveau(titre, contenu)
     return jsonify({"message": "Journal créé"}), 201
 
