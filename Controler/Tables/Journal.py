@@ -5,7 +5,7 @@ class Journal :
     def __init__(self, base):
         self.base = base
     def nouveau(self, titre, contenu):
-        """permet de cree une nouvelle entrée"""
+        """permet de creer une nouvelle entree"""
         sql = """INSERT INTO Journal (Journal_titre, Journal_contenu)
         VALUES (%s, %s)"""
         valeurs = (titre, contenu)

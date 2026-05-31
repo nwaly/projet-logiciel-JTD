@@ -22,7 +22,7 @@ def ajoute_tache():
 # route à utiliser pour récuperer toutes les taches 
 @tache_flask.route("/tache", methods=["GET"])
 def get_tache():
-    """va cherhcer toutes les données de tache dans la base et les envoie en json"""
+    """va chercher toutes les données de tache dans la base et les envoie en json"""
     data_tache = tache.get_tout()
     return jsonify(data_tache), 200
 

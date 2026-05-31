@@ -1,12 +1,35 @@
 {% extends "index.html" %} {% block content %}
+<link 
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='styles/todo_style.css') }}"/>
 <body>
   <div class="container">
-    <div></div> <!--pour activer le grid et centrer le form-->
-    <form action="/action_page.php">
+    <label style="color: white">To Do:</label><br>
+    <input id="nom" type="text" placeholder="what to do next..."></input><br>
+    <input onclick="fetchNewToDo()" type="submit" value="Nouvelle Tâche">
+
+    <!-- ancien code
+
+    # tenté d'utiliser form pour récup les données et les envoyer au serveur
+    # mais ne marche pas car les balises form redirige toujours la page
+    
+    <form action="/fonction_todo" method="post">
       <label for="todo" style="color: white">To Do:</label><br>
-      <input id="todo" type="checkbox" placeholder="what to do next..."></input><br>
+      <input id="todo" type="text" placeholder="what to do next..."></input><br>
       <input type="submit" value="Nouvelle Tâche">
     </form>
+
+    -->
   </div>
+
+  <ul>
+    {% for item in todo_items %}
+        <li><input id="todo_checkbox" type="checkbox"></input>{{ todo }}</li>
+    {% endfor %}
+  </ul>
+  <div class="container">pour load la fonction get_all_to_do et afficher tous les todo </div>
+
+  <script src="{{ url_for('static', filename='scripts/todo_script.js') }}"></script>
 </body>
 {% endblock %}

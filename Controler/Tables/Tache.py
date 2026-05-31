@@ -51,16 +51,15 @@ class Tache :
         table_tache = "SELECT * FROM Tache ORDER BY Tache_date"
         return self.base.query(table_tache)
 
-# class SousTache :
-#     """Classe Sous_Tache (Sous_Tache_ID, Sous_Tache_nom, Sous_Tache_statut, Tache_Tache_ID)"""
-#     def __init__(self, base):
-#         self.base = base
-#     def nouveau(self, nom, statut, tache_id):
-#         """permet de cree une nouvelle sous-tache"""
-#         sous_tache = """INSERT INTO Sous_Tache (Sous_Tache_nom, Sous_Tache_statut, Tache_Tache_ID)
-#         VALUES (%s, %s, %s)"""
-#         valeurs = (nom, statut, tache_id)
-#         self.base.commit(sous_tache, valeurs)
+class SousTache :#     """Classe Sous_Tache (Sous_Tache_ID, Sous_Tache_nom, Sous_Tache_statut, Tache_Tache_ID)"""
+     def __init__(self, base):
+         self.base = base
+     def nouveau(self, nom, statut, tache_id):
+         """permet de cree une nouvelle sous-tache"""
+         sous_tache = """INSERT INTO Sous_Tache (Sous_Tache_nom, Sous_Tache_statut, Tache_Tache_ID)
+         VALUES (%s, %s, %s)"""
+         valeurs = (nom, statut, tache_id)
+         self.base.commit(sous_tache, valeurs)
 
 #     def get_tout(self):
 #         """permet de retourner tout les elements de sous-tache ordonnés selon l'id de la tache

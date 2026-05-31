@@ -1,7 +1,12 @@
 {% extends "index.html" %} {% block content %}
+<link 
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='styles/settings_style.css') }}"/>
 <body>
   <div class="container">
     <span style="color: white;">Settings</span>
   </div>
+  <script src="{{ url_for('static', filename='scripts/settings_script.js') }}"></script>
 </body>
 {% endblock %}

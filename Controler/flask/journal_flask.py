@@ -15,7 +15,7 @@ def ajoute_journal():
     titre = body.get("titre")
     contenu = body.get("contenu")
     journal.nouveau(titre, contenu)
-    return jsonify({"message": "Journal crée"}), 201
+    return jsonify({"message": "Journal créé"}), 201
 
 # route à utiliser pour récuperer toutes les entrées de journal (retourne un dictionnaire json)
 @journal_flask.route("/journal", methods=["GET"])

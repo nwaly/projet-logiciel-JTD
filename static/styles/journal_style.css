@@ -1,0 +1,50 @@
+/*---------styles---------*/
+
+label {
+    color: var(--purple);
+}
+
+input {
+    overflow: auto;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 100;
+    font-size: large;
+    border-radius: 5px;
+}
+
+textarea {
+    /*background-color: rgba(255, 255, 255, 0.8);*/
+    background-color: var(--primary-color);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 200;
+    border-radius: 5px;
+    max-width: 700px; 
+    max-height: 300px;
+}
+
+ul li {
+    padding: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: var(--darkpurple);
+}
+
+/*---------class---------*/
+
+.journal-container {
+    background-color: var(--primary-color);
+    position: relative;
+    /*grid setup*/
+    display: grid;
+    grid-template-columns: auto;
+    gap: 5px;
+    overflow: hidden;
+    /*aligns elements in the center*/
+        align-items: center;
+        justify-content: center;
+        text-align: center; /*aligne le texte au milieu de leur padding*/
+}
+
+/*---------id---------*/
+
+#id {
+}
