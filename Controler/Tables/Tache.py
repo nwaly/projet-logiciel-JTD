@@ -6,7 +6,7 @@ class Tache :
 
         self.base = base
     def nouveau(self, nom, date, statut, sous_tache):
-        """permet de cree une nouvelle tache"""
+        """permet de creer une nouvelle tache"""
         tache = """INSERT INTO Tache (Tache_nom, Tache_date, Tache_statut, Tache_sous_tache)
         VALUES (%s, %s, %s, %s)"""
         valeurs = (nom, date, statut, sous_tache)

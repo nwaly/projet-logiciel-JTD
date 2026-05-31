@@ -9,7 +9,7 @@ class Base:
             host="localhost",
             user="root",
             password="wika20",
-            database="",
+            database="mydb",
             port=3306,
         )
 
