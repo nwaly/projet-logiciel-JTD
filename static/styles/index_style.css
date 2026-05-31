@@ -1,0 +1,116 @@
+/*---pour adapter l'interface à l'écran de l'utilisateur.trice---*/
+    /* Fluid typography that scales with viewport */
+    html {
+    font-size: clamp(16px, 4vw, 22px);
+    }
+
+    /* Container queries for component-based responsive design */
+    .card-container {
+    container-type: inline-size;
+    }
+
+    @container (min-width: 300px) {
+    .card {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+    }
+    }
+
+
+/*---------colors---------*/
+
+:root {
+    --blue: #bffbff;
+    --darkblue: #0856ab;
+    --pink: #ffbfe4;
+    --purple: #d1bfff;
+    --darkpurple: #6338a9;
+    --green: #bfffd8;
+    --primary-color: #ffffff;
+}
+
+/*---------styles---------*/
+
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /*aligns elements in the center*/
+        align-items: center;
+        justify-content: center;
+}
+
+/*---------header styles---------*/
+header {
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
+    overflow: hidden;
+    background-color: var(--purple);
+    /*aligns elements in the center*/
+        align-items: center;
+        justify-content: center;
+    /*keeps bar at the top*/
+        position: sticky;
+        top: 0;
+}
+
+header a {
+    margin: 15px;
+    padding: 10px;
+    width: 100px;
+    text-align: center; /*aligne le texte au milieu de leur padding*/
+    border-radius: 5%;
+    background-color: var(--primary-color);
+    color: var(--darkpurple);
+    text-decoration: none;
+}
+
+header h1 {
+    margin: 15px;
+    padding: 10px;
+    text-align: center; /*aligne le texte au milieu de leur padding*/
+    border-radius: 5%;
+    text-decoration: none;
+    color: #6338a9;
+    font-size: xx-large;
+}
+
+/*---------footer styles---------*/
+
+footer {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    overflow: hidden;
+    background-color: var(--blue);
+    /*aligns elements in the center*/
+        align-items: center;
+        justify-content: center;
+    /*keeps bar at the bottom*/
+        position: fixed;
+        left: 0; 
+        bottom: 0;
+        width: 100%;
+}
+
+footer a {
+    margin: 15px;
+    padding: 10px;
+    width: 100px;
+    text-align: center; /*aligne le texte au milieu de leur padding*/
+    border-radius: 5%;
+    background-color: var(--primary-color);
+    text-decoration: none;
+}
+
+/*---------class---------*/
+
+.bar {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*---------id---------*/
+
+#today {
+    z-index: +1;
+    color: white;
+}

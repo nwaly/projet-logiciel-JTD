@@ -1,0 +1,21 @@
+/*---------styles---------*/
+
+/*---------class---------*/
+
+.container {
+    background-color: #6338a9;
+    position: relative;
+    /*grid setup*/
+    display: grid;
+    /*grid-template-columns: 20% 60% 20%;*/
+    grid-template-columns: auto;
+    gap: 5px;
+    overflow: hidden;
+    padding: 25px;
+    /*aligns elements in the center*/
+        align-items: center;
+        justify-content: center;
+        text-align: center; /*aligne le texte au milieu de leur padding*/
+}
+
+/*---------id---------*/

@@ -1,18 +1,6 @@
-// check si le lien au script marche//
-// console.log("JavaScript file linked successfully!");  
-// alert("Hello from Flask + JavaScript!");
-
-//----------Header----------//
-
-// affiche la date actuelle
-const d = new Date();
-const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-let month_name = month[d.getMonth()];
-document.getElementById("today").innerHTML = d.getDate().toString()+" "+month_name+" "+d.getFullYear().toString();
-
 //----------Journal----------//
 
-function sendData() {
+function sendData() { // pas utilisé...
     var value = document.getElementById('titre').value;
     $.ajax({
         url: '/submit_form',
@@ -28,7 +16,7 @@ function sendData() {
     });
 }
 
-function ajouterEntree() {
+function ajouterEntree() { // pas utilisé...
     if (!document.getElementById("contenu").value == "") {
         //crée un élément li sous la const 'newNode'
         // = crée la balise dans laquelle la nouvelle entrée va être stockée 

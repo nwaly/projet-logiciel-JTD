@@ -1,30 +1,33 @@
 {% extends "index.html" %} {% block content %}
+<link 
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='styles/journal_style.css') }}"/>
 <body>
     <div class="container">
         
-        <form action="{{ url_for('submit_form')}}" method="post">
-            <input onclick="sendData()" type="submit" value="Nouvelle Entrée (marche pas encore)" style="color: var(--darkpurple); font-weight: bolder;"><br>
+        <form id="journal_form" action="/fonction-journal" method="post">
+            <br>
+            <label for="titre">Titre:</label><br>
+            <input
+                type="text"
+                id="titre"
+                name="titre"
+                placeholder="Titre..."
+                style="text-align: center;"><br><br>
+            
+            <label for="contenu">Contenu:</label><br>
+            <textarea
+                type="input"
+                id="contenu"
+                name="contenu"
+                rows="4"
+                col="100"
+                placeholder="Cher journal..."></textarea><br>
+            <button form="journal_form" type="submit" style="color: var(--darkpurple); font-weight: bolder;">Nouvelle Entrée (marche pas encore)</button><br>
         </form>
-        
-        <label for="titre">Titre:</label><br>
-        <input
-            type="text"
-            id="titre"
-            name="titre"
-            placeholder="Titre..."
-            style="text-align: center;"><br><br>
-        
-        <label for="contenu">Contenu:</label><br>
-        <textarea
-            id="contenu"
-            name="contenu"
-            rows="4"
-            col="100"
-            placeholder="Cher journal..."></textarea><br>
-        
-        <!--prend le contenu et en fait un nouvel élément de liste qui s'ajoute dans la zone en dessous-->
-        <button onclick="ajoute_journal()" style="color: var(--darkpurple); font-weight: bolder;">Bouton Nouvelle Entrée</button>
     </div>
     <div id="output" class="journal-container" style="background-color: white;"></div>
+    <script src="{{ url_for('static', filename='scripts/journal_script.js') }}"></script>
 </body>
 {% endblock %}
