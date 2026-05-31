@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>journal</title>
+</head>
+<body>
+
+    <a href="parametres.html">
+        <button>PARAMETRES</button>
+    </a>
+     <a href="taches.html">
+        <button>TACHES</button>
+    </a>
+     <a href="tracker.html">
+        <button>TRACKER</button>
+    </a>
+    <br>
+    <p>JOURNAL</p>
+    <br>
+    <textarea id="titre" placeholder="le titre de votre entrée..."></textarea>
+    <textarea id="contenu" placeholder="le contenu de votre entrée..."></textarea>
+    <!-- Bouton pour récupérer la valeur -->
+    <button id="nouvelle_entree">enregistrer une nouvelle entrée</button>
+    <button id="test">tester</button>
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const bouton_historique = document.getElementById("historique_entree");
+            const textarea_titre = document.getElementById("titre");
+            const textarea_contenu = document.getElementById("contenu");
+            const bouton_nouvelle = document.getElementById("nouvelle_entree");
+
+            bouton_nouvelle.addEventListener("click", function () {
+                const titre = textarea_titre.value.trim(); // trim() supprime espaces inutiles
+                const contenu = textarea_contenu.value.trim();
+                if (titre === "") {
+                    alert("votre entrée n'a pas de titre")
+                } 
+                else if (contenu === ""){
+                    alert("votre entrée n'a pas de contenu")
+                }
+                else {
+                
+                    fetch("/journal", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                    body: JSON.stringify({
+                        titre: titre,
+                        contenu: contenu,
+                    })
+                });
+                alert("votre entrée a été enregistrée")
+                }
+            });
+        });
+
+
+        const bouton_text = document.getElementById("test");
+        bouton_text.addEventListener("click", function () {
+            const contnt_characters = document.getElementById("contenu").value.length;
+            console.log(`le contenu de votre entrée contient ${contnt_characters} caractères`);
+            });
+        
+
+    </script>
+   <a href="historique_entree.html">
+        <button>historique entrées</button>
+    </a>
+</body>
+</html>
