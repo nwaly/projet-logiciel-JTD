@@ -54,19 +54,19 @@ base = Base()
 sous_taches = SousTache(base)
 
 # # route à utiliser pour ajouter une sous-tache
-# @sous_taches_flask.route("/sous_tache", methods=["POST"])
-# def ajoute_sous_tache():
-#     """ajoute un element à la table sous_tache"""
-#     body = request.json
-#     nom = body.get("nom")
-#     statut = body.get("statut")
-#     tache_id = body.get("tache_id")
-#     sous_taches.nouveau(nom, statut, tache_id)
-#     return jsonify({"message": "sous_tache crée"}), 201
+@sous_taches_flask.route("/sous_tache", methods=["POST"])
+def ajoute_sous_tache():
+    """ajoute un element à la table sous_tache"""
+    body = request.json
+    nom = body.get("nom")
+    statut = body.get("statut")
+    tache_id = body.get("tache_id")
+    sous_taches.nouveau(nom, statut, tache_id)
+    return jsonify({"message": "sous_tache crée"}), 201
 
-# # route à utiliser pour récuperer toutes les sous taches
-# @sous_taches_flask.route("/sous_tache", methods=["GET"])
-# def get_sous_tache():
-#     """va cherhcer toutes les données de la sous-tache dans la base et les envoie en json"""
-#     data_sous_tache = sous_taches.get_tout()
-#     return jsonify(data_sous_tache), 200
+# route à utiliser pour récuperer toutes les sous taches
+@sous_taches_flask.route("/sous_tache", methods=["GET"])
+def get_sous_tache():
+    """va cherhcer toutes les données de la sous-tache dans la base et les envoie en json"""
+    data_sous_tache = sous_taches.get_tout()
+    return jsonify(data_sous_tache), 200

@@ -1,75 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>journal</title>
+    <title>Journal</title>
 </head>
 <body>
 
-    <a href="parametres.html">
-        <button>PARAMETRES</button>
-    </a>
-     <a href="taches.html">
-        <button>TACHES</button>
-    </a>
-     <a href="tracker.html">
-        <button>TRACKER</button>
-    </a>
-    <br>
-    <p>JOURNAL</p>
-    <br>
-    <textarea id="titre" placeholder="le titre de votre entrée..."></textarea>
-    <textarea id="contenu" placeholder="le contenu de votre entrée..."></textarea>
-    <!-- Bouton pour récupérer la valeur -->
-    <button id="nouvelle_entree">enregistrer une nouvelle entrée</button>
-    <button id="test">tester</button>
+    <h1>Journal</h1>
 
-    <script>
+    <h2>Créer une nouvelle entrée</h2>
+    <input id="titre" placeholder="Titre"><br><br>
+    <textarea id="contenu" placeholder="Contenu"></textarea><br><br>
+    <button onclick="ajouterJournal()">Créer</button>
 
-        document.addEventListener("DOMContentLoaded", function () {
-            const bouton_historique = document.getElementById("historique_entree");
-            const textarea_titre = document.getElementById("titre");
-            const textarea_contenu = document.getElementById("contenu");
-            const bouton_nouvelle = document.getElementById("nouvelle_entree");
+    <hr>
 
-            bouton_nouvelle.addEventListener("click", function () {
-                const titre = textarea_titre.value.trim(); // trim() supprime espaces inutiles
-                const contenu = textarea_contenu.value.trim();
-                if (titre === "") {
-                    alert("votre entrée n'a pas de titre")
-                } 
-                else if (contenu === ""){
-                    alert("votre entrée n'a pas de contenu")
-                }
-                else {
-                
-                    fetch("/journal", {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json"
-                        },
-                    body: JSON.stringify({
-                        titre: titre,
-                        contenu: contenu,
-                    })
-                });
-                alert("votre entrée a été enregistrée")
-                }
-            });
-        });
+    <h2>Entrées existantes</h2>
+    <div id="liste-journal"></div>
 
+    <hr>
 
-        const bouton_text = document.getElementById("test");
-        bouton_text.addEventListener("click", function () {
-            const contnt_characters = document.getElementById("contenu").value.length;
-            console.log(`le contenu de votre entrée contient ${contnt_characters} caractères`);
-            });
-        
+    <h2>Modifier une entrée</h2>
+    <input id="edit-id" type="hidden">
+    <input id="edit-titre" placeholder="Titre" disabled><br><br>
+    <textarea id="edit-contenu" placeholder="Contenu"></textarea><br><br>
+    <button onclick="modifierJournal()">Enregistrer</button>
 
-    </script>
-   <a href="historique_entree.html">
-        <button>historique entrées</button>
-    </a>
+<script>
+async function chargerJournal() {
+    const res = await fetch("/journal");
+    const data = await res.json();
+
+    const div = document.getElementById("liste-journal");
+    div.innerHTML = "";
+
+    data.forEach(entry => {
+        const bloc = document.createElement("div");
+        bloc.style.border = "1px solid black";
+        bloc.style.padding = "10px";
+        bloc.style.margin = "5px";
+        bloc.innerHTML = `
+            <strong>${entry.Journal_titre}</strong><br>
+            ${entry.Journal_contenu}<br>
+            <button onclick="chargerPourEdition(${entry.Journal_ID}, '${entry.Journal_titre}', \`${entry.Journal_contenu}\`)">
+                Modifier
+            </button>
+        `;
+        div.appendChild(bloc);
+    });
+}
+
+async function ajouterJournal() {
+    const data = {
+        titre: document.getElementById("titre").value,
+        contenu: document.getElementById("contenu").value
+    };
+
+    await fetch("/journal", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(data)
+    });
+
+    chargerJournal();
+}
+
+function chargerPourEdition(id, titre, contenu) {
+    document.getElementById("edit-id").value = id;
+    document.getElementById("edit-titre").value = titre;
+    document.getElementById("edit-contenu").value = contenu;
+}
+
+async function modifierJournal() {
+    const id = document.getElementById("edit-id").value;
+    const contenu = document.getElementById("edit-contenu").value;
+
+    const data = {
+        contenu: contenu,
+        modification: new Date().toISOString().slice(0, 19).replace("T", " ")
+    };
+
+    await fetch(`/journal/${id}`, {
+        method: "PUT",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(data)
+    });
+
+    chargerJournal();
+}
+
+chargerJournal();
+</script>
+
 </body>
 </html>
