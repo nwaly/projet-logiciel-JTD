@@ -6,7 +6,7 @@ README pour l'installation de l'application de Journal_Tracker_To-Do dans le cad
 Création d'un serveur local de MySQL : 
 1) Installez MySQL Workbench (https://dev.mysql.com/downloads/installer/).
 2) Terminez l'installation en le paramétrant à votre guise 
-3) Ouvrez le dossier PLF et ouvrezz le fichier "base.sql" qui se trouve dans le répertoire "backend".
+3) Ouvrez le dossier projet-logiciel-JTD et ouvrez le fichier "base.sql" qui se trouve dans le répertoire "backend".
 4) Copiez le contenu de "base.sql" et créez un nouveau modèle dans MySQL (cliquez sur "File" (en haut à gauche) et séléctionnez "New Model").
 5) Ouvrez le menu SQL Script (avant-dernier menu déroulant qui se trouve au milieu de la page) et double-cliquez sur "Add Script".
 6) Collez le contenu de "base.sql" dans le nouveau script qui vient d'apparaître.
@@ -20,7 +20,7 @@ Création d'un serveur local de MySQL :
 14) Vous pouvez désormais fermer MySQL Workbench.
 
 Modification de la connexion à la base : 
-1) Ouvrez le dossier PLF dans un éditeur de code (Visual Studio Code par exemple) et ouvrez le fichier "base_de_donnee.py" qui se trouve dans le dossier "controler".
+1) Ouvrez le dossier  dans un éditeur de code (Visual Studio Code par exemple) et ouvrez le fichier "base_de_donnee.py" qui se trouve dans le dossier "controler".
 2) Modifiez les informations de l'"init" de la classe "Base" ("host", "user", "password", "database", "port"), surtout le "password", pour qu'elles corréspondent au serveur que vous venez de créer sur votre machine.
 3) N'oubliez pas de sauvegarder et vous pouvez fermer votre éditeur de code.
 
