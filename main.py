@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template
 from  Controler.flask.journal_flask import journal_flask
 from Controler.flask.parametre_flask import parametre_flask
 from Controler.flask.tache_flask import tache_flask
