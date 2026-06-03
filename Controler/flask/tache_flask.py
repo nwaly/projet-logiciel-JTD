@@ -26,7 +26,6 @@ def get_tache():
     data_tache = tache.get_tout()
     return jsonify(data_tache), 200
 
-
 # route à utiliser pour modifier le statut d'une tâche
 @tache_flask.route('/tache_statut', methods=['PUT'])
 def update_statut_tache():

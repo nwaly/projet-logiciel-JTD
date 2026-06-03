@@ -2,6 +2,10 @@
 
 label {
     color: var(--purple);
+    /*aligns elements in the center*/
+    align-items: center;
+    justify-content: center;
+    text-align: center; /*aligne le texte au milieu de leur padding*/
 }
 
 input {
@@ -12,10 +16,22 @@ input {
     border-radius: 5px;
 }
 
+ul {
+    list-style-type:none; /*removes bullet points*/
+    justify-content: left;
+    display: grid;
+    grid-template-columns: 100%;
+
+}
+
 ul li {
-    padding: 10px;
+    margin: 5px 0;
+    font-size: medium;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: var(--darkpurple);
+    display: grid;
+    grid-template-columns: 40% 40% 20%;
+    gap: 5px;
 }
 
 /*---------class---------*/
@@ -23,9 +39,9 @@ ul li {
 .container {
     background-color: #6338a9;
     position: relative;
+    top: 20%;
     /*grid setup*/
     display: grid;
-    /*grid-template-columns: 20% 60% 20%;*/
     grid-template-columns: auto;
     gap: 5px;
     overflow: hidden;
@@ -36,4 +52,39 @@ ul li {
         text-align: center; /*aligne le texte au milieu de leur padding*/
 }
 
+.bar_block {
+    height: 86px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+}
+
+.li_todo {
+    display: grid;
+    grid-template-columns: auto auto 20%;
+    gap: 5px;
+    text-decoration: none;
+}
+
+.date_class {
+    justify-content: left;
+}
+
 /*---------id---------*/
+
+#todos_container {
+    background-color: white;
+    color: var(--darkpurple);
+    position: relative;
+    /*grid setup*/
+    display: grid;
+    grid-template-columns: auto;
+    gap: 5px;
+    overflow: auto;
+    padding: 25px;
+}
+
+#statut {
+    justify-content: right;
+}

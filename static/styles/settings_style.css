@@ -18,4 +18,12 @@
         text-align: center; /*aligne le texte au milieu de leur padding*/
 }
 
+.bar_block {
+    height: 86px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+}
+
 /*---------id---------*/

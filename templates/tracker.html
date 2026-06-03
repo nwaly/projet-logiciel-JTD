@@ -4,9 +4,13 @@
   type="text/css"
   href="{{ url_for('static', filename='styles/tracker_style.css') }}"/>
 <body>
+  <!--pour permettre au contenu de la page au header-->
+  <div class="bar_block"></div>
+  
   <div class="container">
     <span style="color: white;">Tracker</span>
   </div>
+  <div class="bar_block"></div>
   <script src="{{ url_for('static', filename='scripts/tracker_script.js') }}"></script>
 </body>
 {% endblock %}

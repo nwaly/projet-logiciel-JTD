@@ -40,16 +40,22 @@ body {
 
 /*---------header styles---------*/
 header {
+    /*keeps header on top of page content*/
+    z-index: +1;
     display: grid;
     grid-template-columns: 30% 40% 30%;
-    overflow: hidden;
+    overflow: auto;
+    padding: 10px;
+    height: 86px;
     background-color: var(--purple);
     /*aligns elements in the center*/
         align-items: center;
         justify-content: center;
     /*keeps bar at the top*/
-        position: sticky;
-        top: 0;
+        position: fixed;
+        left: 0 !important; 
+        right: 0 !important;
+        top: 0 !important;
 }
 
 header a {
@@ -57,10 +63,14 @@ header a {
     padding: 10px;
     width: 100px;
     text-align: center; /*aligne le texte au milieu de leur padding*/
+    /*aligns elements in the center*/
+        align-items: center;
+        justify-content: center;
     border-radius: 5%;
     background-color: var(--primary-color);
     color: var(--darkpurple);
     text-decoration: none;
+    font-size: 90%;
 }
 
 header h1 {
@@ -69,8 +79,6 @@ header h1 {
     text-align: center; /*aligne le texte au milieu de leur padding*/
     border-radius: 5%;
     text-decoration: none;
-    color: #6338a9;
-    font-size: xx-large;
 }
 
 /*---------footer styles---------*/
@@ -103,7 +111,7 @@ footer a {
 /*---------class---------*/
 
 .bar {
-    width: 100%;
+    /* width: 100%; */
     margin-left: auto;
     margin-right: auto;
 }
@@ -111,6 +119,17 @@ footer a {
 /*---------id---------*/
 
 #today {
-    z-index: +1;
+    z-index: +2;
     color: white;
+    font-size: 100%;
+}
+
+#pageTitle {
+    margin: 15px;
+    padding: 10px;
+    text-align: center; /*aligne le texte au milieu de leur padding*/
+    border-radius: 5%;
+    text-decoration: none;
+    color: #6338a9;
+    font-size: xx-large;
 }
