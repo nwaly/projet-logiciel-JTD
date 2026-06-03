@@ -1,0 +1,103 @@
+/*---------styles---------*/
+
+label {
+    color: var(--purple);
+}
+
+input {
+    overflow: auto;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 100;
+    font-size: large;
+    border-radius: 5px;
+}
+
+textarea {
+    /*background-color: rgba(255, 255, 255, 0.8);*/
+    background-color: var(--primary-color);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 200;
+    border-radius: 5px;
+    max-width: 700px; 
+    max-height: 300px;
+}
+
+ul li {
+    padding: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: var(--darkpurple);
+}
+
+/*---------class---------*/
+
+.container {
+    background-color: #6338a9;
+    position: relative;
+    /*grid setup*/
+    display: grid;
+    /*grid-template-columns: 20% 60% 20%;*/
+    grid-template-columns: auto;
+    gap: 5px;
+    overflow: hidden;
+    padding: 25px;
+    /*aligns elements in the center*/
+        align-items: center;
+        justify-content: center;
+        text-align: center; /*aligne le texte au milieu de leur padding*/
+}
+
+.journal_container {
+    background-color: var(--primary-color);
+    position: relative;
+    /*grid setup*/
+    display: grid;
+    grid-template-columns: auto;
+    gap: 5px;
+    overflow: auto;
+    /*aligns elements in the center*/
+        align-items: center;
+        justify-content: center;
+        text-align: center; /*aligne le texte au milieu de leur padding*/
+    border: 2px solid var(--purple);
+    border-radius: 5px;
+    width: 100%;
+}
+
+.bar_block {
+    height: 86px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+}
+
+.titre_class {
+    justify-content: center;
+    color: var(--darkpurple);
+    padding: 10px;
+}
+
+.date_class {
+    justify-content: center;
+    color: var(--purple);
+    padding: 10px;
+}
+
+.div_container {
+    display: grid;
+    grid-template-columns: auto 50%;
+    grid-gap: 20px;
+    padding: 10px;
+    width: 100%;
+}
+
+.p_contenu {
+    text-align: justify;
+    text-justify: inter-word;
+    font-size: medium;
+    padding: 10px;
+}
+
+/*---------id---------*/
+
+/* #id */

@@ -1,0 +1,48 @@
+{% extends "index.html" %} {% block content %}
+<link 
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='styles/todo_style.css') }}"/>
+<body>
+  <script src="{{ url_for('static', filename='scripts/todo_script.js') }}"></script>
+  
+  <!--pour permettre au contenu de la page au header-->
+  <div class="bar_block"></div>
+  
+  <!--contenu de la page todo-->
+  <div class="container">
+    <label style="color: white">To Do:</label><br>
+    <input id="nom" type="text" placeholder="what to do next..."></input>
+    <input id="date" type="date"></input>
+    <br>
+    <input onclick="fetchNewToDo()" type="submit" value="Ajouter Tâche" style="color: var(--darkpurple);">
+  </div>
+
+  <script>fetchAllToDo()</script>
+
+  <div id="todos_container">
+    <h4 id="li_todo" class="li_todo">
+      <label>Date d'échéance</label>
+      <label>Tâche</label>
+      <label>Checkbox</label>
+    </h4>
+    <ul id="ul_todos"></ul>
+  </div>
+  <div class="bar_block"></div>
+  <script>
+    // pour visualiser les tâches complétées
+    const checkbox = document.getElementById("statut");
+    const Completed = document.getElementsByTagName("li");
+    checkbox.addEventListener("change",
+    function () {
+      if (this.checked) {
+          Completed.style.textDecoration = "line-through";
+          console.log(Completed);
+      } else {
+          textToCross.style.textDecoration = "none";
+          console.log("unchecked !");
+      }
+    });
+  </script>
+</body>
+{% endblock %}

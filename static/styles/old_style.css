@@ -1,0 +1,219 @@
+/*---pour adapter l'interface à l'écran de l'utilisateur.trice---*/
+    /* Fluid typography that scales with viewport */
+    html {
+    font-size: clamp(16px, 4vw, 22px);
+    }
+
+    /* Container queries for component-based responsive design */
+    .card-container {
+    container-type: inline-size;
+    }
+
+    @container (min-width: 300px) {
+    .card {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+    }
+    }
+
+
+/*---------colors---------*/
+
+:root {
+    --blue: #bffbff;
+    --darkblue: #0856ab;
+    --pink: #ffbfe4;
+    --purple: #d1bfff;
+    --darkpurple: #6338a9;
+    --green: #bfffd8;
+    --primary-color: #ffffff;
+}
+
+/*---------styles---------*/
+
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /*aligns elements in the center*/
+        align-items: center;
+        justify-content: center;
+}
+
+form {
+    padding: 15px;
+    /*aligns elements in the center*/
+        align-items: center;
+        justify-content: center;
+}
+
+label {
+    color: var(--purple);
+}
+
+input {
+    overflow: auto;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 100;
+    font-size: large;
+    border-radius: 5px;
+}
+
+textarea {
+    /*background-color: rgba(255, 255, 255, 0.8);*/
+    background-color: var(--primary-color);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 200;
+    border-radius: 5px;
+    max-width: 700px; 
+    max-height: 300px;
+}
+
+ul li {
+    padding: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: var(--darkpurple);
+}
+
+/*header styles*/
+    header {
+        display: grid;
+        grid-template-columns: 30% 40% 30%;
+        overflow: hidden;
+        background-color: var(--purple);
+        /*aligns elements in the center*/
+            align-items: center;
+            justify-content: center;
+        /*keeps bar at the top*/
+            position: sticky;
+            top: 0;
+    }
+
+    header a {
+        margin: 15px;
+        padding: 10px;
+        width: 100px;
+        text-align: center; /*aligne le texte au milieu de leur padding*/
+        border-radius: 5%;
+        background-color: var(--primary-color);
+        color: var(--darkpurple);
+        text-decoration: none;
+    }
+
+    header h1 {
+        margin: 15px;
+        padding: 10px;
+        text-align: center; /*aligne le texte au milieu de leur padding*/
+        border-radius: 5%;
+        text-decoration: none;
+        color: #6338a9;
+        font-size: xx-large;
+    }
+
+/*footer styles*/
+    footer {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        overflow: hidden;
+        background-color: var(--blue);
+        /*aligns elements in the center*/
+            align-items: center;
+            justify-content: center;
+        /*keeps bar at the bottom*/
+            position: fixed;
+            left: 0; 
+            bottom: 0;
+            width: 100%;
+    }
+
+    footer a {
+        margin: 15px;
+        padding: 10px;
+        width: 100px;
+        text-align: center; /*aligne le texte au milieu de leur padding*/
+        border-radius: 5%;
+        background-color: var(--primary-color);
+        text-decoration: none;
+    }
+
+/*---------class---------*/
+
+.bar {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container {
+    background-color: #6338a9;
+    position: relative;
+    /*grid setup*/
+    display: grid;
+    /*grid-template-columns: 20% 60% 20%;*/
+    grid-template-columns: auto;
+    gap: 5px;
+    overflow: hidden;
+    padding: 25px;
+    /*aligns elements in the center*/
+        align-items: center;
+        justify-content: center;
+        text-align: center; /*aligne le texte au milieu de leur padding*/
+}
+
+.journal-container {
+    background-color: var(--primary-color);
+    position: relative;
+    /*grid setup*/
+    display: grid;
+    grid-template-columns: auto;
+    gap: 5px;
+    overflow: hidden;
+    /*aligns elements in the center*/
+        align-items: center;
+        justify-content: center;
+        text-align: center; /*aligne le texte au milieu de leur padding*/
+}
+
+.JournalEntry {
+    background-color: white;
+    width: 100px;
+    height: 200px;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+/*---------id---------*/
+
+#today {
+    z-index: +1;
+    color: white;
+}
+
+#MainPage {
+  display: grid;
+  grid-template-columns: auto;
+  background-color: dodgerblue;
+  padding: 10px;
+  height: auto;
+}
+
+#output {
+    padding: 10px;
+}
+
+#mybutton {
+    float: right;
+    color: #6338a9;
+    background-color: #bfffd8;
+    font-size:80%;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-radius: 10%;
+    height: 50px;
+    width: 60px;
+    box-shadow: none;
+    cursor: pointer;
+}
+
+#DiaryEntry {
+    background-color: white;
+    padding: 15px;
+}

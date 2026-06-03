@@ -1,0 +1,38 @@
+{% extends "index.html" %} {% block content %}
+<link 
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='styles/journal_style.css') }}"/>
+<body>
+    <script src="{{ url_for('static', filename='scripts/journal_script.js') }}"></script>
+    <!--pour permettre au contenu de la page au header-->
+    <div class="bar_block"></div>
+
+    <div class="container">
+        <br>
+        <label for="titre">Titre:</label><br>
+        <input
+            type="text"
+            id="titre"
+            name="titre"
+            placeholder="Titre..."
+            style="text-align: center;"><br><br>
+        
+        <label for="contenu">Contenu:</label><br>
+        <textarea
+            type="input"
+            id="contenu"
+            name="contenu"
+            rows="4"
+            col="100"
+            placeholder="Cher journal..."></textarea><br>
+        <button form="journal_form" onclick="fetchNewJournal()" type="submit" style="color: var(--darkpurple); font-weight: bolder;">Ajouter Entrée</button><br>
+    </div>
+
+    <script>fetchAllJournal()</script>
+
+    <div id="output" class="container" style="background-color: white;">
+    </div>
+    <div class="bar_block"></div>
+</body>
+{% endblock %}

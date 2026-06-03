@@ -1,0 +1,135 @@
+/*---pour adapter l'interface à l'écran de l'utilisateur.trice---*/
+    /* Fluid typography that scales with viewport */
+    html {
+    font-size: clamp(16px, 4vw, 22px);
+    }
+
+    /* Container queries for component-based responsive design */
+    .card-container {
+    container-type: inline-size;
+    }
+
+    @container (min-width: 300px) {
+    .card {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+    }
+    }
+
+
+/*---------colors---------*/
+
+:root {
+    --blue: #bffbff;
+    --darkblue: #0856ab;
+    --pink: #ffbfe4;
+    --purple: #d1bfff;
+    --darkpurple: #6338a9;
+    --green: #bfffd8;
+    --primary-color: #ffffff;
+}
+
+/*---------styles---------*/
+
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /*aligns elements in the center*/
+        align-items: center;
+        justify-content: center;
+}
+
+/*---------header styles---------*/
+header {
+    /*keeps header on top of page content*/
+    z-index: +1;
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
+    overflow: auto;
+    padding: 10px;
+    height: 86px;
+    background-color: var(--purple);
+    /*aligns elements in the center*/
+        align-items: center;
+        justify-content: center;
+    /*keeps bar at the top*/
+        position: fixed;
+        left: 0 !important; 
+        right: 0 !important;
+        top: 0 !important;
+}
+
+header a {
+    margin: 15px;
+    padding: 10px;
+    width: 100px;
+    text-align: center; /*aligne le texte au milieu de leur padding*/
+    /*aligns elements in the center*/
+        align-items: center;
+        justify-content: center;
+    border-radius: 5%;
+    background-color: var(--primary-color);
+    color: var(--darkpurple);
+    text-decoration: none;
+    font-size: 90%;
+}
+
+header h1 {
+    margin: 15px;
+    padding: 10px;
+    text-align: center; /*aligne le texte au milieu de leur padding*/
+    border-radius: 5%;
+    text-decoration: none;
+}
+
+/*---------footer styles---------*/
+
+footer {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    overflow: hidden;
+    background-color: var(--blue);
+    /*aligns elements in the center*/
+        align-items: center;
+        justify-content: center;
+    /*keeps bar at the bottom*/
+        position: fixed;
+        left: 0; 
+        bottom: 0;
+        width: 100%;
+}
+
+footer a {
+    margin: 15px;
+    padding: 10px;
+    width: 100px;
+    text-align: center; /*aligne le texte au milieu de leur padding*/
+    border-radius: 5%;
+    background-color: var(--primary-color);
+    text-decoration: none;
+}
+
+/*---------class---------*/
+
+.bar {
+    /* width: 100%; */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*---------id---------*/
+
+#today {
+    z-index: +2;
+    color: white;
+    font-size: 100%;
+}
+
+#pageTitle {
+    margin: 15px;
+    padding: 10px;
+    text-align: center; /*aligne le texte au milieu de leur padding*/
+    border-radius: 5%;
+    text-decoration: none;
+    color: #6338a9;
+    font-size: xx-large;
+}
