@@ -106,7 +106,6 @@ Le frontend s'occupe de tout ce qui se passe en avant plan et permet la visualis
 - Le dossier "static" qui contient deux dossiers :
     - Le dossier "scripts" qui regroupe les script js qui comprennent les fonctions qui font directement le lien avec les méthodes flask correspondantes en plus d'autres fonctionnalités.
     - Le dossier "styles" qui regroupe les pages css qui permettent de customiser visuellement les éléments de la page html correspondante.
-
 ## Organisation du projet : 
 Le projet a été réalisé du 04.03.26 au 03.06.26. 
 ### Répartition des tâches : 

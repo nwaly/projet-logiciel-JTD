@@ -1,7 +1,13 @@
 # Journal Tracker To Do : projet-logiciel P2026 (version minimale)
 README pour l'installation de l'application de Journal_Tracker_To-Do dans le cadre du cours de Développement Projet Logiciel (UNIL).
 
-# Installation
+# Dépendances :
+Pour faire tourner le logiciel il vous faudra avoir installer les technologies suivantes : 
+- Python 3 (https://www.python.org/downloads/).
+- Flask (https://flask.palletsprojects.com/en/stable/installation/)(à installer dans un environnement virtuel à l'endroit du dossier).
+- MySQL Workbench (https://dev.mysql.com/downloads/installer/).
+
+# Installation :
 
 Création d'un serveur local de MySQL : 
 1) Installez MySQL Workbench (https://dev.mysql.com/downloads/installer/).
