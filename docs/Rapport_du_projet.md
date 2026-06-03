@@ -1,6 +1,6 @@
 Rapprt du projet logiciel : Journal To-Do Tracker
 ## Déscription du projet : 
-Le but de ce projet était de crée une application tournant en local qui permettait les fonctionnalités suivantes : 
+Le but de ce projet était de créer une application tournant en local qui permettait les fonctionnalités suivantes : 
 ### Journal : 
 La fonctionnalité journal devait permettre de pouvoir :
 - Ajouter une nouvelle entrée au journal (avec un titre et un contenu).
@@ -8,11 +8,11 @@ La fonctionnalité journal devait permettre de pouvoir :
 - Visualiser les entrées ajoutées (leur titre, leur contenu, leur date de création).
 ### To-Do :
 La fonctionnalité To-Do devrait perrmettre de pouvoir : 
-- Ajouter une nouvelle tache (nom de la tache, date à laquelle elle doit être terminée).
+- Ajouter une nouvelle tâche (nom de la tâche, date à laquelle elle doit être terminée).
 - Modifier le statut d'une tâche (pour le faire passez de "non-faite" à "faite" (ou de "faite" à "non-faite")).
 ### Tracker : 
 La fonctionnalité Tracker dervrait permettre de pouvoir : 
-- Ajouter un nouveau Tracker (titre, déscription, icone, couleur).
+- Ajouter un nouveau Tracker (titre, description, icône, couleur).
 - Appliquez un Tracker à un calendrier pour savoir quel jour quel objectif à été rempli.
 ## Technologies utilisées : 
 Les technologies utilisées pour ce projet sont : 
@@ -23,16 +23,16 @@ Les technologies utilisées pour ce projet sont :
 ## Architecture du projet : 
 Le projet est organisé en trois séctions principales : le Backend, le Controler et le Frontend. 
 ### Back-end : 
-Le backend s'occupe de tout ce qui se passe en arrière plan, il conmprend : 
+Le backend s'occupe de tout ce qui se passe en arrière plan, il comprend : 
 - La base de donnée, qui tourne sur un serveur MySQL.
 - Le script de la base de donnée, qui se trouve dans la dossier "backend" du projet sous le nom de "base.sql".
 ### Controler : 
 Le controler est l'entité qui fait le lien entre le back-end et le front-end, il comprend les fichiers :
 - "__init__.py" qui sert à rendre le répertoire lisible par python.
 - "base_de _donnee.py" qui instancie la classe "Base" qui possède les méthodes "display", "query" et "commit" qui permettent donner des requetes MySQL à la base. Le __init__ de "Base" permet aussi d'établir le lien avec la base de donnée.
-Mais aussi deux répertoires "classe" et "flask" qui sont expliciter dans les deux séctions suivantes :
+Mais aussi deux répertoires "classe" et "flask" qui sont explicités dans les deux séctions suivantes :
 #### Les Classes
-Les éléments du répertoire "classe" qui ce trouvent dans le repertoire "controler" sont des fichiers python qui définissent une classe pour chaque tableau de la base et qui spécifient les méthodes qui sont propres à chacunes de ces entités, le répertoire "classe" comprend : 
+Les éléments du répertoire "classe" qui se trouvent dans le repertoire "controler" sont des fichiers python qui définissent une classe pour chaque tableau de la base et qui spécifient les méthodes qui sont propres à chacunes de ces entités, le répertoire "classe" comprend : 
 - "__init__.py" qui sert à rendre le répertoire lisible par python.
 - ".Journal.py" qui définit la classe "Journal" ainsi que ces méthodes .
     - "nouveau" qui permet de crée une nouvelle entrée au journal et qui prend comme attribut le titre de l'entrée et son contenu.
@@ -97,11 +97,18 @@ Les éléments du répertoire "flask" qui ce trouvent dans le repertoire "contro
     - "/parametre_couleur" 
         - "PUT" permet de modifier les couleur des parametres.
 ### Front-End : 
-!!!!!!!!!!!!!!!!!
-<A remplir : Nada>
+Le frontend s'occupe de tout ce qui se passe en avant plan et permet la visualisation de l'intéractivité de l'utilisateur avec le logiciel. Il comprend : 
+- Le fichier "main.py" qui regroupe et importe tous les autres fichiers flask pour les faire interagir avec les pages html. Le fichier correspond à l'application et peut se lancer avec les commandes 
+>$env:FLASK_APP="main.py"
+>flask run
+- Le dossier "templates" qui comprend toutes les pages html du projet. Elles sont structurées de la manière suivante :
+    - "index.html" : il contient le header, le footer ainsi qu'un block entre les deux qui permet de générer le contenu de la page sélectionnée. De cette manière le header et le footer n'ont besoin d'être codés qu'une seule fois tout en restant permanent dans l'application.
+- Le dossier "static" qui contient deux dossiers :
+    - Le dossier "scripts" qui regroupe les script js qui comprennent les fonctions qui font directement le lien avec les méthodes flask correspondantes en plus d'autres fonctionnalités.
+    - Le dossier "styles" qui regroupe les pages css qui permettent de customiser visuellement les éléments de la page html correspondante.
 
 ## Organisation du projet : 
-Le projet a été réalisé du 04.03.26 au 03.05.26. 
+Le projet a été réalisé du 04.03.26 au 03.06.26. 
 ### Répartition des tâches : 
 ![image de la gantt chart](../images/gantt_chart.png "Gantt_chart du projet")
 Nada Waly : Front-end.
