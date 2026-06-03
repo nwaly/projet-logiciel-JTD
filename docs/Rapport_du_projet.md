@@ -108,7 +108,7 @@ Nada Waly : Front-end.
 Alyssa Gheza : Back-end et Controler.
 ## Fonctionnement du logiciel :
 Le logiciel est constitué des cinq pages web suivantes : 
-### Page d'Accueil :
+### Page Home :
 Au lancement de l'appliquation vous arriverez sur la page "Home" qui sert de page d'accueil. D'ici là vous pouvez vous rendre : 
 - Sur la page "Journal" en cliquant sur le bouton "Journal" (en bas au milieux).
 - Sur la page "Tracker" en cliquant sur le bouton "Tracker" (en bas à droite).
