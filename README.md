@@ -23,6 +23,7 @@ Modification de la connexion à la base :
 1) Ouvrez le dossier  dans un éditeur de code (Visual Studio Code par exemple) et ouvrez le fichier "base_de_donnee.py" qui se trouve dans le dossier "controler".
 2) Modifiez les informations de l'"init" de la classe "Base" ("host", "user", "password", "database", "port"), surtout le "password", pour qu'elles corréspondent au serveur que vous venez de créer sur votre machine.
 3) N'oubliez pas de sauvegarder et vous pouvez fermer votre éditeur de code.
+![image la connection à la base à modifiée](./images/lien_base.png "modification du lien à la base")
 
 Lancement de l'application : 
 1) Ouvrez un terminal et rendez-vous dans le dossier de l'application.

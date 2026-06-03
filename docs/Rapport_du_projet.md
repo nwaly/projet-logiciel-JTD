@@ -1,4 +1,4 @@
-# Rapprt du projet logiciel : Journal To-Do Tracker (version minimale)
+Rapprt du projet logiciel : Journal To-Do Tracker
 ## Déscription du projet : 
 Le but de ce projet était de crée une application tournant en local qui permettait les fonctionnalités suivantes : 
 ### Journal : 
@@ -98,24 +98,59 @@ Les éléments du répertoire "flask" qui ce trouvent dans le repertoire "contro
         - "PUT" permet de modifier les couleur des parametres.
 ### Front-End : 
 !!!!!!!!!!!!!!!!!
-
+<A remplir : Nada>
 
 ## Organisation du projet : 
 Le projet a été réalisé du 04.03.26 au 03.05.26. 
 ### Répartition des tâches : 
-![image de la gantt chart](../images/Gantt_chart.png "Gantt_chart pour cette version du projet")
+![image de la gantt chart](../images/gantt_chart.png "Gantt_chart du projet")
+Nada Waly : Front-end.
+Alyssa Gheza : Back-end et Controler.
 ## Fonctionnement du logiciel :
-!!!!!!!!!!!!!!!
+Le logiciel est constitué des cinq pages web suivantes : 
+### Page d'Accueil :
+Au lancement de l'appliquation vous arriverez sur la page "Home" qui sert de page d'accueil. D'ici là vous pouvez vous rendre : 
+- Sur la page "Journal" en cliquant sur le bouton "Journal" (en bas au milieux).
+- Sur la page "Tracker" en cliquant sur le bouton "Tracker" (en bas à droite).
+- Sur la page "To Do" en cliquant sur le bouton "ToDo" (en bas à gauche).
+- Sur la page "Settings" en cliquant sur le bouton "Settings" (en haut à droite).
+![image de la page Home](../images/home.png "Page Home")
 ### Page Journal :
-!!!!!!!!!!!!!!!
-![image de la page Journal](../images/Journal.png "Page Journal")
-### Page Tache : 
-!!!!!!!!!!!!!!!!
-![image de la page ToDo](../images/ToDo.png "Page ToDo")
+En cliquant sur le bouton "Journal" depuis une autre page vous vous rendrez sur la page "Journal", ce qui vous donnera la possibilité de : 
+- Ajouter une nouvelle entrée journal en : 
+    - Remplissant le champ "Titre..." en cliquant sur le réctangle blanc qui porte ce nom et en y écrivant le titre de votre entrée. 
+    - Remplissant le champ "Contenu" en cliquant sur le réctangle blanc qui porte le nom "Cher journal..." et en y écrivant le contenu de votre entrée.
+    - Enregistrerant votre entrée en appuyant sur le bouton "Ajouter Entrée". 
+- Visualisez vos entrées enregistrées (en faisant défiller la page vers le bas)
+- Vous rendre sur les autres pages du logiciel :
+    - Sur la page "Journal" en cliquant sur le bouton "Journal" (en bas au milieux).
+    - Sur la page "Tracker" en cliquant sur le bouton "Tracker" (en bas à droite).
+    - Sur la page "To Do" en cliquant sur le bouton "ToDo" (en bas à gauche).
+    - Sur la page "Settings" en cliquant sur le bouton "Paramètres" (en haut à droite).
+![image de la page Journal](../images/journal.png "Page Journal")
+### Page To Do : 
+En cliquant sur le bouton "To Do" depuis une autre page vous vous rendrez sur la page "To Do", ce qui vous donnera la possibilité de : 
+- crée une nouvelle tache en : 
+    - remplissant le champ "what to do next..." avec le nom de votre tâche à accomplir.
+    - séléctionner une date buttoir pour votre tâche avec le champ "jj.mm.aaaa" .
+    - cliquant sur le bouton "Ajouter Tâche".
+- Visualiser vos tâches enregistrées.
+- Valider vos tâches en cochant la case qui se trouve à leur droite.
+![image de la page ToDo](../images/tache.png "Page ToDo")
 ### Page Tracker : 
-!!!!!!!!!!!!!!!!!!!!!
-![image de la page Tracker](../images/Tracker.png "Page Tracker") 
+En cliquant sur le bouton "Tracker" depuis une autre page vous vous rendrez sur la page "Tracker", ce qui vous donnera la possibilité de : 
+- Vous rendre sur les autres pages du logiciel :
+    - Sur la page "Journal" en cliquant sur le bouton "Journal" (en bas au milieux).
+    - Sur la page "Tracker" en cliquant sur le bouton "Tracker" (en bas à droite).
+    - Sur la page "To Do" en cliquant sur le bouton "ToDo" (en bas à gauche).
+    - Sur la page "Settings" en cliquant sur le bouton "Paramètres" (en haut à droite).
+![image de la page Tracker](../images/tracker.png "Page Tracker") 
 ### Page Paramètres : 
-!!!!!!!!!!!!!!!!!!!!!
-![image de la page Settings](../images/Settings.png "Page Settings")
+En cliquant sur le bouton "Settings" depuis la page "Home" ou en cliquant sur le bouton "Paramètres" depuis une autre page vous vous rendrez sur la page "Paramètres", ce qui vous donnera la possibilité de : 
+- Vous rendre sur les autres pages du logiciel :
+    - Sur la page "Journal" en cliquant sur le bouton "Journal" (en bas au milieux).
+    - Sur la page "Tracker" en cliquant sur le bouton "Tracker" (en bas à droite).
+    - Sur la page "To Do" en cliquant sur le bouton "ToDo" (en bas à gauche).
+    - Sur la page "Settings" en cliquant sur le bouton "Paramètres" (en haut à droite).
+![image de la page Settings](../images/setting.png "Page Settings")
 

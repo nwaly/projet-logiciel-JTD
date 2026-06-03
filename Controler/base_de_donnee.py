@@ -1,6 +1,5 @@
 """lien avec la base de donnee"""
 import mysql.connector
-"""Fuji06Maxoue09"""
 
 class Base:
     """classe base de donnee"""
@@ -8,7 +7,7 @@ class Base:
         self.connexion = mysql.connector.connect(
             host="localhost",
             user="root",
-            password="wika20",
+            password="Fuji06Maxoue09",
             database="mydb",
             port=3306,
         )

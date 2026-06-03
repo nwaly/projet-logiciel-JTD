@@ -9,7 +9,7 @@ class Tracker ():
         """permet de cree un nouveau tracker"""
         sql = """INSERT INTO Tracker (Tracker_ID, Tracker_nom, Tracker_description,
         Tracker_couleur, Tracker_icone)
-        VALUES (SELECT COALESCE(MAX(Tracker_ID),0)+1, %s, %s, %s, %s)"""
+        VALUES COALESCE(MAX(Tracker_ID),0)+1, %s, %s, %s, %s"""
         valeurs = (nom, description, couleur, icone)
         self.base.commit(sql, valeurs)
 
